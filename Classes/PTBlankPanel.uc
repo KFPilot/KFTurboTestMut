@@ -265,25 +265,92 @@ function bool InternalOnPreDraw(Canvas C) {
 
 defaultproperties
 {
-     b_KFButtons(0)=GUIButton'PerkTestMutV3.PTBlankPanel.SettingsButton'
-     b_KFButtons(1)=GUIButton'PerkTestMutV3.PTBlankPanel.BrowserButton'
-     b_KFButtons(2)=GUIButton'PerkTestMutV3.PTBlankPanel.FavoritesButton'
-     b_KFButtons(3)=GUIButton'PerkTestMutV3.PTBlankPanel.MapVotingButton'
-     b_KFButtons(4)=GUIButton'PerkTestMutV3.PTBlankPanel.KickVotingButton'
-     b_KFButtons(5)=GUIButton'PerkTestMutV3.PTBlankPanel.SpectateButton'
-     b_KFButtons(6)=GUIButton'PerkTestMutV3.PTBlankPanel.LeaveMatchButton'
-     b_KFButtons(7)=GUIButton'PerkTestMutV3.PTBlankPanel.QuitGameButton'
-     LeaveMPButtonText="Disconnect"
-     LeaveSPButtonText="Forfeit"
-     SpectateButtonText="Spectate"
-     JoinGameButtonText="Join"
-     KickPlayer="Kick "
-     BanPlayer="Ban "
-     PlayerStyleName="TextLabel"
-     PropagateVisibility=False
-     WinTop=0.125000
-     WinLeft=0.250000
-     WinWidth=0.500000
-     WinHeight=0.750000
-     OnPreDraw=PTBlankPanel.InternalOnPreDraw
+	Begin Object Class=GUIButton Name=SettingsButton
+		Caption="Settings"
+		WinTop=0.878657
+		WinLeft=0.194420
+		WinWidth=0.147268
+		WinHeight=0.048769
+		TabOrder=30
+		OnClick=PTBlankPanel.ButtonClicked
+		OnKeyEvent=SettingsButton.InternalOnKeyEvent
+	End Object
+	b_KFButtons(0)=GUIButton'PTBlankPanel.SettingsButton'
+
+	Begin Object Class=GUIButton Name=BrowserButton
+		Caption="Server Browser"
+		bAutoSize=true
+		TabOrder=31
+		OnClick=PTBlankPanel.ButtonClicked
+		OnKeyEvent=BrowserButton.InternalOnKeyEvent
+	End Object
+	b_KFButtons(1)=GUIButton'PTBlankPanel.BrowserButton'
+
+	Begin Object Class=GUIButton Name=FavoritesButton
+		Caption="Add to Favs"
+		bAutoSize=true
+		Hint="Add this server to your Favorites"
+		TabOrder=32
+		OnClick=PTBlankPanel.ButtonClicked
+		OnKeyEvent=FavoritesButton.InternalOnKeyEvent
+	End Object
+	b_KFButtons(2)=GUIButton'PTBlankPanel.FavoritesButton'
+	
+	Begin Object Class=GUIButton Name=MapVotingButton
+		Caption="Map Voting"
+		bAutoSize=true
+		TabOrder=33
+		OnClick=PTBlankPanel.ButtonClicked
+		OnKeyEvent=MapVotingButton.InternalOnKeyEvent
+	End Object
+	b_KFButtons(3)=GUIButton'PTBlankPanel.MapVotingButton'
+
+	Begin Object Class=GUIButton Name=KickVotingButton
+		Caption="Kick Voting"
+		bAutoSize=true
+		TabOrder=34
+		OnClick=PTBlankPanel.ButtonClicked
+		OnKeyEvent=KickVotingButton.InternalOnKeyEvent
+	End Object
+	b_KFButtons(4)=GUIButton'PTBlankPanel.KickVotingButton'
+
+	Begin Object Class=GUIButton Name=SpectateButton
+		Caption="Spectate"
+		bAutoSize=true
+		TabOrder=35
+		OnClick=PTBlankPanel.ButtonClicked
+		OnKeyEvent=SpectateButton.InternalOnKeyEvent
+	End Object
+	b_KFButtons(5)=GUIButton'PTBlankPanel.SpectateButton'
+	
+	Begin Object Class=GUIButton Name=LeaveMatchButton
+		bAutoSize=true
+		TabOrder=36
+		OnClick=PTBlankPanel.ButtonClicked
+		OnKeyEvent=LeaveMatchButton.InternalOnKeyEvent
+	End Object
+	b_KFButtons(6)=GUIButton'PTBlankPanel.LeaveMatchButton'
+	
+	Begin Object Class=GUIButton Name=QuitGameButton
+		Caption="Exit Game"
+		bAutoSize=true
+		TabOrder=37
+		OnClick=PTBlankPanel.ButtonClicked
+		OnKeyEvent=QuitGameButton.InternalOnKeyEvent
+	End Object
+	b_KFButtons(7)=GUIButton'PTBlankPanel.QuitGameButton'
+	
+	LeaveMPButtonText="Disconnect"
+	LeaveSPButtonText="Forfeit"
+	SpectateButtonText="Spectate"
+	JoinGameButtonText="Join"
+	KickPlayer="Kick "
+	BanPlayer="Ban "
+	PlayerStyleName="TextLabel"
+	PropagateVisibility=False
+	WinTop=0.125000
+	WinLeft=0.250000
+	WinWidth=0.500000
+	WinHeight=0.750000
+	OnPreDraw=PTBlankPanel.InternalOnPreDraw
 }

@@ -13,13 +13,13 @@ function UsedBy(Pawn User) {
 
 function Touch(Actor Other) {
 	local Pawn P;
-	local PTPlayerController C;
+	local KFTTPlayerController C;
 	
 	P = KFHumanPawn(Other);
 	if (P == None)
 		return;
 
-	C = PTPlayerController(P.Controller);
+	C = KFTTPlayerController(P.Controller);
 	if (C != None && P.health > 0 && Message != "") {
 		if (Level.timeSeconds - C.lastTriggerMsg > 0.1) {
 			C.ClientMessage(Message);

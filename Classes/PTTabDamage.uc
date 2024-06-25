@@ -1,12 +1,12 @@
 class PTTabDamage extends PTBlankPanel;
 
-var PTPlayerController PC;
+var KFTTPlayerController PC;
 var automated GUISectionBackground sb_Damage;
 var automated GUIScrollTextBox lb_Damage;
 var automated GUIButton b_Clear;
 
 function InitPanel() {
-	PC = PTPlayerController(PlayerOwner());
+	PC = KFTTPlayerController(PlayerOwner());
 	if (PC == None)
 		Free();
 }
@@ -75,7 +75,7 @@ defaultproperties
          Caption="Damage"
          OnPreDraw=sbDamage.InternalPreDraw
      End Object
-     sb_Damage=AltSectionBackground'PerkTestMutV3.PTTabDamage.sbDamage'
+     sb_Damage=AltSectionBackground'KFTurboTestMut.PTTabDamage.sbDamage'
 
      Begin Object Class=GUIScrollTextBox Name=lbDamage
          bNoTeletype=True
@@ -86,7 +86,7 @@ defaultproperties
          FontScale=FNS_Small
          bNeverFocus=True
      End Object
-     lb_Damage=GUIScrollTextBox'PerkTestMutV3.PTTabDamage.lbDamage'
+     lb_Damage=GUIScrollTextBox'KFTurboTestMut.PTTabDamage.lbDamage'
 
      Begin Object Class=GUIButton Name=bClear
          Caption="Clear"
@@ -94,7 +94,7 @@ defaultproperties
          OnClick=PTTabDamage.ButtonClicked
          OnKeyEvent=bClear.InternalOnKeyEvent
      End Object
-     b_Clear=GUIButton'PerkTestMutV3.PTTabDamage.bClear'
+     b_Clear=GUIButton'KFTurboTestMut.PTTabDamage.bClear'
 
      OnPreDraw=PTTabDamage.InternalOnPreDraw
 }

@@ -1,7 +1,7 @@
 class PTTabMain extends PTBlankPanel
 	config(User);
 
-var PTPlayerController PC;
+var KFTTPlayerController PC;
 var automated GUISectionBackground sb_TopLeft, sb_MidLeft, sb_BottomLeft, sb_TopRight, sb_BottomRight;
 var automated GUILabel l_PerkLabel, l_HealthLabel, l_SpeedLabel;
 var automated GUIButton b_SetPerk, b_SetHealth, b_SetSpeed, b_ClearLevel, b_ClearZeds, b_Teleport, b_Trade, b_God, b_ViewZeds, b_ViewSelf, b_Radial;
@@ -13,7 +13,7 @@ var automated moCheckbox ch_KeepWeapons, ch_EnableCrosshairs, ch_DrawHitboxes;
 var array<GUIButton> LColumn, RColumn;
 
 function InitPanel() {
-	PC = PTPlayerController(PlayerOwner());
+	PC = KFTTPlayerController(PlayerOwner());
 	if (PC == None)
 		Free();
 }
@@ -248,49 +248,49 @@ defaultproperties
          Caption="Change perk"
          OnPreDraw=BGTopLeft.InternalPreDraw
      End Object
-     sb_TopLeft=GUISectionBackground'PerkTestMutV3.PTTabMain.BGTopLeft'
+     sb_TopLeft=GUISectionBackground'KFTurboTestMut.PTTabMain.BGTopLeft'
 
      Begin Object Class=GUISectionBackground Name=BGMidLeft
          bFillClient=True
          Caption="Health config"
          OnPreDraw=BGMidLeft.InternalPreDraw
      End Object
-     sb_MidLeft=GUISectionBackground'PerkTestMutV3.PTTabMain.BGMidLeft'
+     sb_MidLeft=GUISectionBackground'KFTurboTestMut.PTTabMain.BGMidLeft'
 
      Begin Object Class=GUISectionBackground Name=BGBottomLeft
          bFillClient=True
          Caption="Game speed"
          OnPreDraw=BGBottomLeft.InternalPreDraw
      End Object
-     sb_BottomLeft=GUISectionBackground'PerkTestMutV3.PTTabMain.BGBottomLeft'
+     sb_BottomLeft=GUISectionBackground'KFTurboTestMut.PTTabMain.BGBottomLeft'
 
      Begin Object Class=GUISectionBackground Name=BGTopRight
          bFillClient=True
          Caption="Misc. options"
          OnPreDraw=BGTopRight.InternalPreDraw
      End Object
-     sb_TopRight=GUISectionBackground'PerkTestMutV3.PTTabMain.BGTopRight'
+     sb_TopRight=GUISectionBackground'KFTurboTestMut.PTTabMain.BGTopRight'
 
      Begin Object Class=GUISectionBackground Name=BGBottomRight
          Caption="Misc. commands"
          OnPreDraw=BGBottomRight.InternalPreDraw
      End Object
-     sb_BottomRight=GUISectionBackground'PerkTestMutV3.PTTabMain.BGBottomRight'
+     sb_BottomRight=GUISectionBackground'KFTurboTestMut.PTTabMain.BGBottomRight'
 
      Begin Object Class=GUILabel Name=PerkLabel
          TabOrder=2
      End Object
-     l_PerkLabel=GUILabel'PerkTestMutV3.PTTabMain.PerkLabel'
+     l_PerkLabel=GUILabel'KFTurboTestMut.PTTabMain.PerkLabel'
 
      Begin Object Class=GUILabel Name=HealthLabel
          TabOrder=5
      End Object
-     l_HealthLabel=GUILabel'PerkTestMutV3.PTTabMain.HealthLabel'
+     l_HealthLabel=GUILabel'KFTurboTestMut.PTTabMain.HealthLabel'
 
      Begin Object Class=GUILabel Name=SpeedLabel
          TabOrder=8
      End Object
-     l_SpeedLabel=GUILabel'PerkTestMutV3.PTTabMain.SpeedLabel'
+     l_SpeedLabel=GUILabel'KFTurboTestMut.PTTabMain.SpeedLabel'
 
      Begin Object Class=GUIButton Name=SetPerkButton
          Caption="Apply"
@@ -298,7 +298,7 @@ defaultproperties
          OnClick=PTTabMain.ButtonClicked
          OnKeyEvent=SetPerkButton.InternalOnKeyEvent
      End Object
-     b_SetPerk=GUIButton'PerkTestMutV3.PTTabMain.SetPerkButton'
+     b_SetPerk=GUIButton'KFTurboTestMut.PTTabMain.SetPerkButton'
 
      Begin Object Class=GUIButton Name=SetHealth
          Caption="Apply"
@@ -306,7 +306,7 @@ defaultproperties
          OnClick=PTTabMain.ButtonClicked
          OnKeyEvent=SetHealth.InternalOnKeyEvent
      End Object
-     b_SetHealth=GUIButton'PerkTestMutV3.PTTabMain.SetHealth'
+     b_SetHealth=GUIButton'KFTurboTestMut.PTTabMain.SetHealth'
 
      Begin Object Class=GUIButton Name=SetSpeed
          Caption="Apply"
@@ -314,7 +314,7 @@ defaultproperties
          OnClick=PTTabMain.ButtonClicked
          OnKeyEvent=SetSpeed.InternalOnKeyEvent
      End Object
-     b_SetSpeed=GUIButton'PerkTestMutV3.PTTabMain.SetSpeed'
+     b_SetSpeed=GUIButton'KFTurboTestMut.PTTabMain.SetSpeed'
 
      Begin Object Class=GUIButton Name=ClearLevelButton
          Caption="Clear Level"
@@ -323,7 +323,7 @@ defaultproperties
          OnClick=PTTabMain.ButtonClicked
          OnKeyEvent=ClearLevelButton.InternalOnKeyEvent
      End Object
-     b_ClearLevel=GUIButton'PerkTestMutV3.PTTabMain.ClearLevelButton'
+     b_ClearLevel=GUIButton'KFTurboTestMut.PTTabMain.ClearLevelButton'
 
      Begin Object Class=GUIButton Name=ClearZedsButton
          Caption="Clear Zeds"
@@ -332,7 +332,7 @@ defaultproperties
          OnClick=PTTabMain.ButtonClicked
          OnKeyEvent=ClearZedsButton.InternalOnKeyEvent
      End Object
-     b_ClearZeds=GUIButton'PerkTestMutV3.PTTabMain.ClearZedsButton'
+     b_ClearZeds=GUIButton'KFTurboTestMut.PTTabMain.ClearZedsButton'
 
      Begin Object Class=GUIButton Name=TeleportButton
          Caption="Teleport"
@@ -341,7 +341,7 @@ defaultproperties
          OnClick=PTTabMain.ButtonClicked
          OnKeyEvent=TeleportButton.InternalOnKeyEvent
      End Object
-     b_Teleport=GUIButton'PerkTestMutV3.PTTabMain.TeleportButton'
+     b_Teleport=GUIButton'KFTurboTestMut.PTTabMain.TeleportButton'
 
      Begin Object Class=GUIButton Name=TradeButton
          Caption="Trade"
@@ -350,7 +350,7 @@ defaultproperties
          OnClick=PTTabMain.ButtonClicked
          OnKeyEvent=TradeButton.InternalOnKeyEvent
      End Object
-     b_Trade=GUIButton'PerkTestMutV3.PTTabMain.TradeButton'
+     b_Trade=GUIButton'KFTurboTestMut.PTTabMain.TradeButton'
 
      Begin Object Class=GUIButton Name=GodButton
          Caption="God Mode"
@@ -359,7 +359,7 @@ defaultproperties
          OnClick=PTTabMain.ButtonClicked
          OnKeyEvent=GodButton.InternalOnKeyEvent
      End Object
-     b_God=GUIButton'PerkTestMutV3.PTTabMain.GodButton'
+     b_God=GUIButton'KFTurboTestMut.PTTabMain.GodButton'
 
      Begin Object Class=GUIButton Name=ViewZedsButton
          Caption="View Zeds"
@@ -368,7 +368,7 @@ defaultproperties
          OnClick=PTTabMain.ButtonClicked
          OnKeyEvent=ViewZedsButton.InternalOnKeyEvent
      End Object
-     b_ViewZeds=GUIButton'PerkTestMutV3.PTTabMain.ViewZedsButton'
+     b_ViewZeds=GUIButton'KFTurboTestMut.PTTabMain.ViewZedsButton'
 
      Begin Object Class=GUIButton Name=ViewSelfButton
          Caption="View Self"
@@ -377,7 +377,7 @@ defaultproperties
          OnClick=PTTabMain.ButtonClicked
          OnKeyEvent=ViewSelfButton.InternalOnKeyEvent
      End Object
-     b_ViewSelf=GUIButton'PerkTestMutV3.PTTabMain.ViewSelfButton'
+     b_ViewSelf=GUIButton'KFTurboTestMut.PTTabMain.ViewSelfButton'
 
      Begin Object Class=GUIButton Name=RadialButton
          Caption="Force Radial"
@@ -386,7 +386,7 @@ defaultproperties
          OnClick=PTTabMain.ButtonClicked
          OnKeyEvent=RadialButton.InternalOnKeyEvent
      End Object
-     b_Radial=GUIButton'PerkTestMutV3.PTTabMain.RadialButton'
+     b_Radial=GUIButton'KFTurboTestMut.PTTabMain.RadialButton'
 
      Begin Object Class=moNumericEdit Name=PerkLevel
          MinValue=0
@@ -397,7 +397,7 @@ defaultproperties
          TabOrder=0
          OnChange=PTTabMain.InternalOnChange
      End Object
-     nu_PerkLevel=moNumericEdit'PerkTestMutV3.PTTabMain.PerkLevel'
+     nu_PerkLevel=moNumericEdit'KFTurboTestMut.PTTabMain.PerkLevel'
 
      Begin Object Class=moNumericEdit Name=NumPlayers
          MinValue=1
@@ -408,7 +408,7 @@ defaultproperties
          TabOrder=4
          OnChange=PTTabMain.InternalOnChange
      End Object
-     nu_NumPlayers=moNumericEdit'PerkTestMutV3.PTTabMain.NumPlayers'
+     nu_NumPlayers=moNumericEdit'KFTurboTestMut.PTTabMain.NumPlayers'
 
      Begin Object Class=moComboBox Name=PerkName
          bReadOnly=True
@@ -418,7 +418,7 @@ defaultproperties
          TabOrder=1
          OnChange=PTTabMain.InternalOnChange
      End Object
-     co_PerkName=moComboBox'PerkTestMutV3.PTTabMain.PerkName'
+     co_PerkName=moComboBox'KFTurboTestMut.PTTabMain.PerkName'
 
      Begin Object Class=moFloatEdit Name=GameSpeed
          MinValue=0.100000
@@ -429,7 +429,7 @@ defaultproperties
          TabOrder=7
          OnChange=PTTabMain.InternalOnChange
      End Object
-     fl_GameSpeed=moFloatEdit'PerkTestMutV3.PTTabMain.GameSpeed'
+     fl_GameSpeed=moFloatEdit'KFTurboTestMut.PTTabMain.GameSpeed'
 
      Begin Object Class=moCheckBox Name=KeepWeapons
          Caption="Keep weapons"
@@ -439,7 +439,7 @@ defaultproperties
          OnChange=PTTabMain.InternalOnChange
          OnLoadINI=PTTabMain.InternalOnLoadINI
      End Object
-     ch_KeepWeapons=moCheckBox'PerkTestMutV3.PTTabMain.KeepWeapons'
+     ch_KeepWeapons=moCheckBox'KFTurboTestMut.PTTabMain.KeepWeapons'
 
      Begin Object Class=moCheckBox Name=EnableCrosshairs
          Caption="Show crosshairs"
@@ -449,7 +449,7 @@ defaultproperties
          OnChange=PTTabMain.InternalOnChange
          OnLoadINI=PTTabMain.InternalOnLoadINI
      End Object
-     ch_EnableCrosshairs=moCheckBox'PerkTestMutV3.PTTabMain.EnableCrosshairs'
+     ch_EnableCrosshairs=moCheckBox'KFTurboTestMut.PTTabMain.EnableCrosshairs'
 
      Begin Object Class=moCheckBox Name=DrawHitboxes
          Caption="Draw head hitboxes"
@@ -459,7 +459,7 @@ defaultproperties
          OnChange=PTTabMain.InternalOnChange
          OnLoadINI=PTTabMain.InternalOnLoadINI
      End Object
-     ch_DrawHitboxes=moCheckBox'PerkTestMutV3.PTTabMain.DrawHitboxes'
+     ch_DrawHitboxes=moCheckBox'KFTurboTestMut.PTTabMain.DrawHitboxes'
 
      OnPreDraw=PTTabMain.InternalOnPreDraw
 }

@@ -1,4 +1,4 @@
-class PerkTestMutV3 extends Mutator;
+class KFTurboTestMut extends Mutator;
 
 var const byte MAX_HeadHitboxes;
 var const float TIME_ClearDelay;
@@ -62,7 +62,7 @@ function PostBeginPlay() {
 		
 	GT = PTGameType(Level.Game);
 	if (GT == None) {
-		Level.ServerTravel("?game=PerkTestMutV3.PTGameType", true);
+		Level.ServerTravel("?game=KFTurboTestMut.PTGameType", true);
 	}
 	else {
 		GR = Spawn(class'PTGameRules');
@@ -76,9 +76,9 @@ function PostBeginPlay() {
 		
 		GT.HUDType = string(class'PTHUD');
 	
-		if (!ClassIsChildOf(GT.PlayerControllerClass, class'PTPlayerController')) {
-			GT.PlayerControllerClass = class'PTPlayerController';
-			GT.PlayerControllerClassName = string(class'PTPlayerController');
+		if (!ClassIsChildOf(GT.PlayerControllerClass, class'KFTTPlayerController')) {
+			GT.PlayerControllerClass = class'KFTTPlayerController';
+			GT.PlayerControllerClassName = string(class'KFTTPlayerController');
 		}
 	}
 }
@@ -92,10 +92,10 @@ function bool ReplaceActorClass(out class<Actor> MC) {
             return false;
     }
        
-    MColl = class'KFGameType'.default.MonsterCollection;
+    MColl = class'KFProGameType'.default.MonsterCollection;
        
     if(MC == None || InStr(MC, "Boss") != -1) {
-        MCName = "PerkTestMutV3.ZombieTestBoss";
+        MCName = "KFTurboTestMut.ZombieTestBoss";
         if (Divide(MColl.default.EndGameBossClass, "_", LeftPart, RigthPart)) {
             MCName $= "_" $ RigthPart;
         }
@@ -104,7 +104,7 @@ function bool ReplaceActorClass(out class<Actor> MC) {
         return true;
     }
        
-    for (i = 0; i < class'KFGameType'.default.MonsterCollection.default.StandardMonsterClasses.length; i++) {
+    for (i = 0; i < class'KFProGameType'.default.MonsterCollection.default.StandardMonsterClasses.length; i++) {
         MCName = MColl.default.StandardMonsterClasses[i].MClassName;
             l = Min(Len(MCName), Len(string(MC)));
             if (Left(MCName, l) ~= Left(string(MC), l)) {
@@ -136,8 +136,8 @@ function bool CheckReplacement(Actor Other, out byte bSuperRelevant) {
 		
 		AddHitbox(Zed);
 	}
-	else if (Other.IsA('PTPlayerController')) {
-		PTPlayerController(Other).Mut = Self;
+	else if (Other.IsA('KFTTPlayerController')) {
+		KFTTPlayerController(Other).Mut = Self;
 	}
 	else if (Other.IsA('Pickup')) {
 		if (Other.IsA('FirstAidKit')) {
@@ -189,7 +189,7 @@ simulated function Tick(float DeltaTime) {
 	
 	PC = Level.GetLocalPlayerController();
 	if (PC != None) {
-		PC.Player.InteractionMaster.AddInteraction("PerkTestMutV3.PTInteraction", PC.Player);
+		PC.Player.InteractionMaster.AddInteraction("KFTurboTestMut.PTInteraction", PC.Player);
 		Disable('Tick');
 	}
 }
@@ -213,7 +213,7 @@ function Timer() {
 function AddHitbox(KFMonster Zed) {
 	local PTHeadHitbox NewHitbox;
 	
-	NewHitbox = Spawn(class'PerkTestMutV3.PTHeadHitbox', Zed);
+	NewHitbox = Spawn(class'KFTurboTestMut.PTHeadHitbox', Zed);
 	if (NewHitbox != None) {
 		NewHitbox.Mut = Self;
 		HeadHitboxes[HeadHitboxes.length] = NewHitbox;
@@ -241,7 +241,7 @@ function CheckHitboxes() {
 		if (bDrawHitboxes) {
 			bDrawHitboxes = false;
 			for (C = Level.ControllerList; C != None; C = C.NextController) {
-				CheckPlayerHitboxes(PTPlayerController(C));
+				CheckPlayerHitboxes(KFTTPlayerController(C));
 			}
 		}
 	}
@@ -250,7 +250,7 @@ function CheckHitboxes() {
 	}
 }
 
-function CheckPlayerHitboxes(PTPlayerController Sender) {
+function CheckPlayerHitboxes(KFTTPlayerController Sender) {
 	if (Sender != None) {
 		if (HeadHitboxes.length >= MAX_HeadHitboxes) {
 			if (Sender.bDrawHitboxes) {
@@ -269,8 +269,8 @@ function CheckDrawHitboxes() {
 	
 	bNewDrawHitboxes = false;
 	for (C = Level.ControllerList; C != None; C = C.NextController) {
-		if (PTPlayerController(C) != None) {
-			if (PTPlayerController(C).bDrawHitboxes) {
+		if (KFTTPlayerController(C) != None) {
+			if (KFTTPlayerController(C).bDrawHitboxes) {
 				bNewDrawHitboxes = true;
 				break;
 			}
@@ -380,9 +380,9 @@ function ClearLevel(optional PlayerController Sender) {
 		}
 
 		for (C = Level.ControllerList; C != None; C = C.NextController) {
-			if (PTPlayerController(C) != None) {
-				PTPlayerController(C).ClientClearLevel();
-				PTPlayerController(C).ClientForceCollectGarbage();
+			if (KFTTPlayerController(C) != None) {
+				KFTTPlayerController(C).ClientClearLevel();
+				KFTTPlayerController(C).ClientForceCollectGarbage();
 			}
 		}
 		

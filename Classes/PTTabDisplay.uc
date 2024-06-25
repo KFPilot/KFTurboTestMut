@@ -1,12 +1,12 @@
 class PTTabDisplay extends PTBlankPanel;
 
-var PTPlayerController PC;
+var KFTTPlayerController PC;
 var automated GUISectionBackground sb_Damage, sb_Hitbox;
 var automated GUILabel l_DamageExample, l_HitboxExample;
 var automated moSlider sl_DamageR, sl_DamageG, sl_DamageB, sl_DamageA, sl_HitboxR, sl_HitboxG, sl_HitboxB, sl_NumSegments;
 
 function InitPanel() {
-	PC = PTPlayerController(PlayerOwner());
+	PC = KFTTPlayerController(PlayerOwner());
 	if (PC == None) {
 		Free();
 	}
@@ -124,28 +124,28 @@ defaultproperties
          Caption="Damage Messages"
          OnPreDraw=sbDamage.InternalPreDraw
      End Object
-     sb_Damage=AltSectionBackground'PerkTestMutV3.PTTabDisplay.sbDamage'
+     sb_Damage=AltSectionBackground'KFTurboTestMut.PTTabDisplay.sbDamage'
 
      Begin Object Class=AltSectionBackground Name=sbHitbox
          bFillClient=True
          Caption="Head Hitboxes"
          OnPreDraw=sbHitbox.InternalPreDraw
      End Object
-     sb_Hitbox=AltSectionBackground'PerkTestMutV3.PTTabDisplay.sbHitbox'
+     sb_Hitbox=AltSectionBackground'KFTurboTestMut.PTTabDisplay.sbHitbox'
 
      Begin Object Class=GUILabel Name=DamageExample
          Caption="Example"
          TextAlign=TXTA_Center
          FontScale=FNS_Small
      End Object
-     l_DamageExample=GUILabel'PerkTestMutV3.PTTabDisplay.DamageExample'
+     l_DamageExample=GUILabel'KFTurboTestMut.PTTabDisplay.DamageExample'
 
      Begin Object Class=GUILabel Name=HitboxExample
          Caption="Example"
          TextAlign=TXTA_Center
          FontScale=FNS_Small
      End Object
-     l_HitboxExample=GUILabel'PerkTestMutV3.PTTabDisplay.HitboxExample'
+     l_HitboxExample=GUILabel'KFTurboTestMut.PTTabDisplay.HitboxExample'
 
      Begin Object Class=moSlider Name=DamageR
          MaxValue=255.000000
@@ -159,7 +159,7 @@ defaultproperties
          TabOrder=1
          OnChange=PTTabDisplay.InternalOnChange
      End Object
-     sl_DamageR=moSlider'PerkTestMutV3.PTTabDisplay.DamageR'
+     sl_DamageR=moSlider'KFTurboTestMut.PTTabDisplay.DamageR'
 
      Begin Object Class=moSlider Name=DamageG
          MaxValue=255.000000
@@ -173,7 +173,7 @@ defaultproperties
          TabOrder=2
          OnChange=PTTabDisplay.InternalOnChange
      End Object
-     sl_DamageG=moSlider'PerkTestMutV3.PTTabDisplay.DamageG'
+     sl_DamageG=moSlider'KFTurboTestMut.PTTabDisplay.DamageG'
 
      Begin Object Class=moSlider Name=DamageB
          MaxValue=255.000000
@@ -187,7 +187,7 @@ defaultproperties
          TabOrder=3
          OnChange=PTTabDisplay.InternalOnChange
      End Object
-     sl_DamageB=moSlider'PerkTestMutV3.PTTabDisplay.DamageB'
+     sl_DamageB=moSlider'KFTurboTestMut.PTTabDisplay.DamageB'
 
      Begin Object Class=moSlider Name=DamageA
          MaxValue=100.000000
@@ -201,7 +201,7 @@ defaultproperties
          TabOrder=4
          OnChange=PTTabDisplay.InternalOnChange
      End Object
-     sl_DamageA=moSlider'PerkTestMutV3.PTTabDisplay.DamageA'
+     sl_DamageA=moSlider'KFTurboTestMut.PTTabDisplay.DamageA'
 
      Begin Object Class=moSlider Name=HitboxR
          MaxValue=255.000000
@@ -215,7 +215,7 @@ defaultproperties
          TabOrder=5
          OnChange=PTTabDisplay.InternalOnChange
      End Object
-     sl_HitboxR=moSlider'PerkTestMutV3.PTTabDisplay.HitboxR'
+     sl_HitboxR=moSlider'KFTurboTestMut.PTTabDisplay.HitboxR'
 
      Begin Object Class=moSlider Name=HitboxG
          MaxValue=255.000000
@@ -229,7 +229,7 @@ defaultproperties
          TabOrder=6
          OnChange=PTTabDisplay.InternalOnChange
      End Object
-     sl_HitboxG=moSlider'PerkTestMutV3.PTTabDisplay.HitboxG'
+     sl_HitboxG=moSlider'KFTurboTestMut.PTTabDisplay.HitboxG'
 
      Begin Object Class=moSlider Name=HitboxB
          MaxValue=255.000000
@@ -243,7 +243,7 @@ defaultproperties
          TabOrder=7
          OnChange=PTTabDisplay.InternalOnChange
      End Object
-     sl_HitboxB=moSlider'PerkTestMutV3.PTTabDisplay.HitboxB'
+     sl_HitboxB=moSlider'KFTurboTestMut.PTTabDisplay.HitboxB'
 
      Begin Object Class=moSlider Name=NumSegments
          MaxValue=30.000000
@@ -258,7 +258,7 @@ defaultproperties
          TabOrder=8
          OnChange=PTTabDisplay.InternalOnChange
      End Object
-     sl_NumSegments=moSlider'PerkTestMutV3.PTTabDisplay.NumSegments'
+     sl_NumSegments=moSlider'KFTurboTestMut.PTTabDisplay.NumSegments'
 
      OnPreDraw=PTTabDisplay.InternalOnPreDraw
 }

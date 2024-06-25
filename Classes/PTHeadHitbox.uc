@@ -1,13 +1,13 @@
 class PTHeadHitbox extends Actor;
 
-var PerkTestMutV3 Mut;
-var PTPlayerController LP;
+var KFTurboTestMut Mut;
+var KFTTPlayerController LP;
 var KFMonster Zed;
 var Vector HeadLocation;
 var float headScale;
 
 replication {
-	reliable if (Role == ROLE_Authority && Mut != None && Mut.bDrawHitboxes && PTPlayerController(Level.ReplicationViewer) != None && PTPlayerController(Level.ReplicationViewer).bDrawHitboxes)
+	reliable if (Role == ROLE_Authority && Mut != None && Mut.bDrawHitboxes && KFTTPlayerController(Level.ReplicationViewer) != None && KFTTPlayerController(Level.ReplicationViewer).bDrawHitboxes)
 		HeadLocation, headScale;
 }
 
@@ -21,7 +21,7 @@ simulated event PostBeginPlay() {
 		Zed = KFMonster(Owner);
 	}
 	
-	LP = PTPlayerController(Level.GetLocalPlayerController());
+	LP = KFTTPlayerController(Level.GetLocalPlayerController());
 	if (LP != None) {
 		LP.AddHitbox(Self);
 	}

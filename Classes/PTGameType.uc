@@ -106,5 +106,5 @@ State MatchInProgress {
 
 defaultproperties
 {
-     LoginMenuClass="PerkTestMutV3.PTLoginMenu"
+     LoginMenuClass="KFTurboTestMut.PTLoginMenu"
 }

@@ -3,14 +3,14 @@ class PTInteraction extends Interaction;
 const XHAIR_LineLength = 16.0;
 const XHAIR_LineWidth = 2.0;
 
-var PTPlayerController PC;
+var KFTTPlayerController PC;
 
 event NotifyLevelChange() {
 	Master.RemoveInteraction(Self);
 }
 
 function PostRender(Canvas C) {
-	PC = PTPlayerController(ViewportOwner.Actor);
+	PC = KFTTPlayerController(ViewportOwner.Actor);
 	if (PC == None) {
 		return;
 	}

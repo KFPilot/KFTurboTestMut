@@ -9,7 +9,7 @@ function InitComponent(GUIController MyController, GUIComponent MyComponent) {
 	SetTitle();
 	T_WindowTitle.DockedTabs = c_Main;
 	c_Main.RemoveTab(Panels[0].Caption);
-	if (PTPlayerController(PlayerOwner()) != None) {
+	if (KFTTPlayerController(PlayerOwner()) != None) {
 		c_Main.ActivateTabByName(Panels[1].Caption, true);
 	}
 	else {
@@ -32,12 +32,12 @@ function AddPanels() {
 
 defaultproperties
 {
-     Panels(1)=(ClassName="PerkTestMutV3.PTTabMain",Caption="Commands",Hint="Main mutator interface")
-     Panels(2)=(ClassName="PerkTestMutV3.PTTabDamage",Caption="Damage",Hint="Damage dealt to zeds")
-     Panels(3)=(ClassName="PerkTestMutV3.PTTabDisplay",Caption="Display",Hint="Customize appearance of damage messages and head hitboxes")
-     Panels(4)=(ClassName="PerkTestMutV3.PTTabWeapon",Caption="Weapon",Hint="Your current weapon stats adjusted for your current perk bonuses")
+     Panels(1)=(ClassName="KFTurboTestMut.PTTabMain",Caption="Commands",Hint="Main mutator interface")
+     Panels(2)=(ClassName="KFTurboTestMut.PTTabDamage",Caption="Damage",Hint="Damage dealt to zeds")
+     Panels(3)=(ClassName="KFTurboTestMut.PTTabDisplay",Caption="Display",Hint="Customize appearance of damage messages and head hitboxes")
+     Panels(4)=(ClassName="KFTurboTestMut.PTTabWeapon",Caption="Weapon",Hint="Your current weapon stats adjusted for your current perk bonuses")
      Panels(5)=(ClassName="KFGui.KFTab_MidGameVoiceChat",Caption="Communication",Hint="Manage communication with other players")
-     Panels(6)=(ClassName="PerkTestMutV3.PTTabHelp",Caption="Help",Hint="List of all available commands")
+     Panels(6)=(ClassName="KFTurboTestMut.PTTabHelp",Caption="Help",Hint="List of all available commands")
      Begin Object Class=GUITabControl Name=LoginMenuTC
          bDockPanels=True
          BackgroundStyleName="TabBackground"
@@ -49,6 +49,6 @@ defaultproperties
          bAcceptsInput=True
          OnActivate=LoginMenuTC.InternalOnActivate
      End Object
-     c_Main=GUITabControl'PerkTestMutV3.PTLoginMenu.LoginMenuTC'
+     c_Main=GUITabControl'KFTurboTestMut.PTLoginMenu.LoginMenuTC'
 
 }

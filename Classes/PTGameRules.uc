@@ -2,20 +2,20 @@ class PTGameRules extends GameRules;
 
 const TIME_HitInterval = 0.06;
 
-var PerkTestMutV3 Mut;
+var KFTurboTestMut Mut;
 
 function bool PreventDeath(Pawn Killed, Controller Killer, class<DamageType> DamageType, Vector HitLocation) {
-	local PTPlayerController PC;
+	local KFTTPlayerController PC;
 	local Inventory Inv;
 	
 	if (KFMonster(Killed) != None) {
-		PC = PTPlayerController(Killer);
+		PC = KFTTPlayerController(Killer);
 		if (PC != None && !PC.bHitMultipleZeds && PC.LastDamagedZed == Killed) {
 			PC.ReceiveDamageMessages();
 		}
 	}
 	else if (KFHumanPawn(Killed) != None) {
-		PC = PTPlayerController(Killed.Controller);
+		PC = KFTTPlayerController(Killed.Controller);
 		if (PC != None && PC.bKeepWeapons) {
 			PC.KeptWeapons.Remove(0, PC.KeptWeapons.length);
 			for (Inv = Killed.Inventory; Inv != None; Inv = Inv.Inventory) {
@@ -31,7 +31,7 @@ function bool PreventDeath(Pawn Killed, Controller Killer, class<DamageType> Dam
 
 function int NetDamage(int originalDamage, int damage, Pawn Injured, Pawn InstigatedBy, Vector HitLocation, out Vector Momentum, class<DamageType> DamageType) {
 	local KFMonster InjuredZed;
-	local PTPlayerController PC;
+	local KFTTPlayerController PC;
 	
 	if (NextGameRules != None) {
 		damage = NextGameRules.NetDamage(originalDamage, damage, Injured, InstigatedBy, HitLocation, Momentum, DamageType);
@@ -41,7 +41,7 @@ function int NetDamage(int originalDamage, int damage, Pawn Injured, Pawn Instig
 		return damage;
 	}
 
-	PC = PTPlayerController(InstigatedBy.Controller);
+	PC = KFTTPlayerController(InstigatedBy.Controller);
 	InjuredZed = KFMonster(Injured);
 	if (PC != None && InjuredZed != None) {
 		if (PC.LastDamagedZed == None) {

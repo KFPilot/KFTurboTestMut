@@ -38,7 +38,7 @@ defaultproperties
          Caption="Available commands"
          OnPreDraw=sbHelp.InternalPreDraw
      End Object
-     sb_Help=AltSectionBackground'PerkTestMutV3.PTTabHelp.sbHelp'
+     sb_Help=AltSectionBackground'KFTurboTestMut.PTTabHelp.sbHelp'
 
      Begin Object Class=GUIScrollTextBox Name=lbHelp
          bNoTeletype=True
@@ -47,7 +47,7 @@ defaultproperties
          OnCreateComponent=lbHelp.InternalOnCreateComponent
          bNeverFocus=True
      End Object
-     lb_Help=GUIScrollTextBox'PerkTestMutV3.PTTabHelp.lbHelp'
+     lb_Help=GUIScrollTextBox'KFTurboTestMut.PTTabHelp.lbHelp'
 
      HelpStr="Aside from using the GUI, the following commands can either be bound to a key or manually typed in the console. All commands are case insensitive.||* SetPerk [perk] [level] - change your perk and level;||* SetHealth [number of players] - set the number of players to scale zeds' health;||* SetGameSpeed [new speed] - adjust the game speed;||* ClearLevel - remove all weapon pickups and projectiles and reset all doors;||* ClearZeds - remove all zeds;||* Whoosh - teleport between set locations on the map;||* Trade - open the trader menu;||* GodMode - toggle god mode;||* ViewZeds / ViewSelf - spectate zeds;||* ForceRadial - force Patriarch to do his radial attack;||* Poof - fire a projectile that instantly kills zeds."
      OnPreDraw=PTTabHelp.InternalOnPreDraw

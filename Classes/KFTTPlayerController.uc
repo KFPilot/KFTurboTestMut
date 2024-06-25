@@ -1,4 +1,4 @@
-class PTPlayerController extends KFMod.KFPlayerController
+class KFTTPlayerController extends KFPPlayerController
 	config(User);
 
 const MAX_DamageMessages = 50;
@@ -6,7 +6,7 @@ const MSG_Spec = "Sorry, spectators cannot use commands.";
 const MSG_Dead = "Sorry, dead players cannot use commands.";
 const STR_TeleTag = "SkellsTele";
 
-var PerkTestMutV3 Mut;
+var KFTurboTestMut Mut;
 var KFMonster LastDamagedZed;
 var array<Teleporter> Destinations;
 var array<PTHeadHitbox> HeadHitboxes;
@@ -181,11 +181,11 @@ function DrawHitboxes() {
 	
 	KFHUD.ClearStayingDebugLines();
 	
-	if (HeadHitboxes.length >= class'PerkTestMutV3'.default.MAX_HeadHitboxes) {
+	if (HeadHitboxes.length >= class'KFTurboTestMut'.default.MAX_HeadHitboxes) {
 		return;
 	}
 	
-	if (Pawn != None && class'PerkTestMutV3'.static.DealsMeleeDamage(Pawn.Weapon)) {
+	if (Pawn != None && class'KFTurboTestMut'.static.DealsMeleeDamage(Pawn.Weapon)) {
 		scaleMod = 1.25;
 	}
 	else {
@@ -255,26 +255,26 @@ exec function SetPerk(string NewPerk, optional int newLevel) {
 	switch(NewPerk) {
 		case "med":
 		case "medic":
-			SelectedVeterancy = class'KFMod.KFVetFieldMedic';
+			SelectedVeterancy = class'KFTurbo.V_FieldMedic';
 			break;
 		case "supp":
-			SelectedVeterancy = class'KFMod.KFVetSupportSpec';
+			SelectedVeterancy = class'KFTurbo.V_SupportSpec';
 			break;
 		case "sharp":
-			SelectedVeterancy = class'KFMod.KFVetSharpshooter';
+			SelectedVeterancy = class'KFTurbo.V_Sharpshooter';
 			break;
 		case "cmdo":
 		case "mando":
-			SelectedVeterancy = class'KFMod.KFVetCommando';
+			SelectedVeterancy = class'KFTurbo.V_Commando';
 			break;
 		case "zerk":
-			SelectedVeterancy = class'KFMod.KFVetBerserker';
+			SelectedVeterancy = class'KFTurbo.V_Berserker';
 			break;
 		case "fire":
-			SelectedVeterancy = class'KFMod.KFVetFirebug';
+			SelectedVeterancy = class'KFTurbo.V_Firebug';
 			break;
 		case "demo":
-			SelectedVeterancy = class'KFMod.KFVetDemolitions';
+			SelectedVeterancy = class'KFTurbo.V_Demolitions';
 			break;
 		default:
 			ClientMessage("Available perk names: med/medic, supp, sharp, cmdo/mando, zerk, fire, demo");
@@ -496,7 +496,7 @@ function PTProjBase SpawnProj(class<PTProjBase> ProjClass) {
 }
 
 exec function Poof() {
-	SpawnProj(class'PerkTestMutV3.PTProjPoof');
+	SpawnProj(class'KFTurboTestMut.PTProjPoof');
 }
 
 /* STATES */
@@ -641,7 +641,7 @@ defaultproperties
      SelectedVeterancy=Class'KFMod.KFVetSharpshooter'
      bWantsTraderPath=False
      bChangedVeterancyThisWave=True
-     MidGameMenuClass="PerkTestMutV3.PTLoginMenu"
-     SteamStatsAndAchievementsClass=Class'PerkTestMutV3.PTSteamStatsAndAchievements'
-     PawnClass=Class'PerkTestMutV3.PTHumanPawn'
+     MidGameMenuClass="KFTurboTestMut.PTLoginMenu"
+     SteamStatsAndAchievementsClass=Class'KFTurboTestMut.PTSteamStatsAndAchievements'
+     PawnClass=Class'KFTurboTestMut.PTHumanPawn'
 }

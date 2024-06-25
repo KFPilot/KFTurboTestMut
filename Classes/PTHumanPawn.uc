@@ -5,7 +5,7 @@ function bool CanBuyNow() {
 }
 
 function AddDefaultInventory() {
-	local PTPlayerController PC;
+	local KFTTPlayerController PC;
 	local KFPlayerReplicationInfo PRI;
 	local int i;
 
@@ -15,7 +15,7 @@ function AddDefaultInventory() {
 		if (RequiredEquipment[i] != "")
 			CreateInventory(RequiredEquipment[i]);
 
-	PC = PTPlayerController(Controller);
+	PC = KFTTPlayerController(Controller);
 	if (PC != None && PC.bKeepWeapons) {
 		for (i = 0; i < PC.KeptWeapons.length; i++)
 			if (PC.KeptWeapons[i] != "")

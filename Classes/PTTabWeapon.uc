@@ -172,7 +172,7 @@ defaultproperties
          Caption="Weapon Stats"
          OnPreDraw=sbStats.InternalPreDraw
      End Object
-     sb_Stats=AltSectionBackground'PerkTestMutV3.PTTabWeapon.sbStats'
+     sb_Stats=AltSectionBackground'KFTurboTestMut.PTTabWeapon.sbStats'
 
      Begin Object Class=GUIScrollTextBox Name=lbStats
          bNoTeletype=True
@@ -182,7 +182,7 @@ defaultproperties
          FontScale=FNS_Small
          bNeverFocus=True
      End Object
-     lb_Stats=GUIScrollTextBox'PerkTestMutV3.PTTabWeapon.lbStats'
+     lb_Stats=GUIScrollTextBox'KFTurboTestMut.PTTabWeapon.lbStats'
 
      StatColour=(B=120,G=120,R=120)
      TextColour=(B=255,G=255,R=255)
