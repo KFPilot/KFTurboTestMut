@@ -41,6 +41,22 @@ exec function TogglePathToTrader();
 function SetShowPathToTrader(bool bShouldShowPath);
 simulated function CheckForHint(int hintType);
 
+event ClientOpenMenu(string Menu, optional bool bDisconnect,optional string Msg1, optional string Msg2)
+{
+	log(Menu);
+	Super.ClientOpenMenu(Menu, bDisconnect, Msg1, Msg2);	
+}
+
+simulated function ClientReceiveLoginMenu(string MenuClass, bool bForce)
+{
+	if (MenuClass ~= "KFTurbo.KFPInvasionLoginMenu" || MenuClass ~= "ServerPerks.SRInvasionLoginMenu" || MenuClass ~= "KFGui.KFInvasionLoginMenu")
+	{
+		MenuClass = "KFTurboTestMut.KFTTLoginMenu";
+	}
+
+	Super.ClientReceiveLoginMenu(MenuClass, bForce);
+}
+
 event ClientMessage(coerce string S, optional Name Type) {
 	local string Msg, UseBinds, KeyName;
 
