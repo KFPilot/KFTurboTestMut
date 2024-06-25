@@ -37,7 +37,7 @@ defaultproperties
      Panels(3)=(ClassName="KFTurboTestMut.KFTTTabDisplay",Caption="Display",Hint="Customize appearance of damage messages and head hitboxes")
      Panels(4)=(ClassName="KFTurboTestMut.KFTTTabWeapon",Caption="Weapon",Hint="Your current weapon stats adjusted for your current perk bonuses")
      Panels(5)=(ClassName="KFGui.KFTab_MidGameVoiceChat",Caption="Communication",Hint="Manage communication with other players")
-     Panels(6)=(ClassName="KFTurboTestMut.KFTTabHelp",Caption="Help",Hint="List of all available commands")
+     Panels(6)=(ClassName="KFTurboTestMut.KFTTTabHelp",Caption="Help",Hint="List of all available commands")
      Begin Object Class=GUITabControl Name=LoginMenuTC
          bDockPanels=True
          BackgroundStyleName="TabBackground"
