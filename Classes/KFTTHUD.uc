@@ -1,4 +1,4 @@
-class PTHUD extends KFMod.HUDKillingFloor;
+class KFTTHUD extends SRHUDKillingFloor;
 
 simulated function DrawKFHUDTextElements(Canvas C);
 

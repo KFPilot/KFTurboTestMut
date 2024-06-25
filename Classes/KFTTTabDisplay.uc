@@ -1,4 +1,4 @@
-class PTTabDisplay extends PTBlankPanel;
+class KFTTTabDisplay extends KFTTBlankPanel;
 
 var KFTTPlayerController PC;
 var automated GUISectionBackground sb_Damage, sb_Hitbox;
@@ -124,28 +124,28 @@ defaultproperties
          Caption="Damage Messages"
          OnPreDraw=sbDamage.InternalPreDraw
      End Object
-     sb_Damage=AltSectionBackground'KFTurboTestMut.PTTabDisplay.sbDamage'
+     sb_Damage=AltSectionBackground'KFTurboTestMut.KFTTTabDisplay.sbDamage'
 
      Begin Object Class=AltSectionBackground Name=sbHitbox
          bFillClient=True
          Caption="Head Hitboxes"
          OnPreDraw=sbHitbox.InternalPreDraw
      End Object
-     sb_Hitbox=AltSectionBackground'KFTurboTestMut.PTTabDisplay.sbHitbox'
+     sb_Hitbox=AltSectionBackground'KFTurboTestMut.KFTTTabDisplay.sbHitbox'
 
      Begin Object Class=GUILabel Name=DamageExample
          Caption="Example"
          TextAlign=TXTA_Center
          FontScale=FNS_Small
      End Object
-     l_DamageExample=GUILabel'KFTurboTestMut.PTTabDisplay.DamageExample'
+     l_DamageExample=GUILabel'KFTurboTestMut.KFTTTabDisplay.DamageExample'
 
      Begin Object Class=GUILabel Name=HitboxExample
          Caption="Example"
          TextAlign=TXTA_Center
          FontScale=FNS_Small
      End Object
-     l_HitboxExample=GUILabel'KFTurboTestMut.PTTabDisplay.HitboxExample'
+     l_HitboxExample=GUILabel'KFTurboTestMut.KFTTTabDisplay.HitboxExample'
 
      Begin Object Class=moSlider Name=DamageR
          MaxValue=255.000000
@@ -157,9 +157,9 @@ defaultproperties
          LabelColor=(B=255,G=255,R=255)
          OnCreateComponent=DamageR.InternalOnCreateComponent
          TabOrder=1
-         OnChange=PTTabDisplay.InternalOnChange
+         OnChange=KFTTTabDisplay.InternalOnChange
      End Object
-     sl_DamageR=moSlider'KFTurboTestMut.PTTabDisplay.DamageR'
+     sl_DamageR=moSlider'KFTurboTestMut.KFTTTabDisplay.DamageR'
 
      Begin Object Class=moSlider Name=DamageG
          MaxValue=255.000000
@@ -171,9 +171,9 @@ defaultproperties
          LabelColor=(B=255,G=255,R=255)
          OnCreateComponent=DamageG.InternalOnCreateComponent
          TabOrder=2
-         OnChange=PTTabDisplay.InternalOnChange
+         OnChange=KFTTTabDisplay.InternalOnChange
      End Object
-     sl_DamageG=moSlider'KFTurboTestMut.PTTabDisplay.DamageG'
+     sl_DamageG=moSlider'KFTurboTestMut.KFTTTabDisplay.DamageG'
 
      Begin Object Class=moSlider Name=DamageB
          MaxValue=255.000000
@@ -185,9 +185,9 @@ defaultproperties
          LabelColor=(B=255,G=255,R=255)
          OnCreateComponent=DamageB.InternalOnCreateComponent
          TabOrder=3
-         OnChange=PTTabDisplay.InternalOnChange
+         OnChange=KFTTTabDisplay.InternalOnChange
      End Object
-     sl_DamageB=moSlider'KFTurboTestMut.PTTabDisplay.DamageB'
+     sl_DamageB=moSlider'KFTurboTestMut.KFTTTabDisplay.DamageB'
 
      Begin Object Class=moSlider Name=DamageA
          MaxValue=100.000000
@@ -199,9 +199,9 @@ defaultproperties
          LabelColor=(B=255,G=255,R=255)
          OnCreateComponent=DamageA.InternalOnCreateComponent
          TabOrder=4
-         OnChange=PTTabDisplay.InternalOnChange
+         OnChange=KFTTTabDisplay.InternalOnChange
      End Object
-     sl_DamageA=moSlider'KFTurboTestMut.PTTabDisplay.DamageA'
+     sl_DamageA=moSlider'KFTurboTestMut.KFTTTabDisplay.DamageA'
 
      Begin Object Class=moSlider Name=HitboxR
          MaxValue=255.000000
@@ -213,9 +213,9 @@ defaultproperties
          LabelColor=(B=255,G=255,R=255)
          OnCreateComponent=HitboxR.InternalOnCreateComponent
          TabOrder=5
-         OnChange=PTTabDisplay.InternalOnChange
+         OnChange=KFTTTabDisplay.InternalOnChange
      End Object
-     sl_HitboxR=moSlider'KFTurboTestMut.PTTabDisplay.HitboxR'
+     sl_HitboxR=moSlider'KFTurboTestMut.KFTTTabDisplay.HitboxR'
 
      Begin Object Class=moSlider Name=HitboxG
          MaxValue=255.000000
@@ -227,9 +227,9 @@ defaultproperties
          LabelColor=(B=255,G=255,R=255)
          OnCreateComponent=HitboxG.InternalOnCreateComponent
          TabOrder=6
-         OnChange=PTTabDisplay.InternalOnChange
+         OnChange=KFTTTabDisplay.InternalOnChange
      End Object
-     sl_HitboxG=moSlider'KFTurboTestMut.PTTabDisplay.HitboxG'
+     sl_HitboxG=moSlider'KFTurboTestMut.KFTTTabDisplay.HitboxG'
 
      Begin Object Class=moSlider Name=HitboxB
          MaxValue=255.000000
@@ -241,9 +241,9 @@ defaultproperties
          LabelColor=(B=255,G=255,R=255)
          OnCreateComponent=HitboxB.InternalOnCreateComponent
          TabOrder=7
-         OnChange=PTTabDisplay.InternalOnChange
+         OnChange=KFTTTabDisplay.InternalOnChange
      End Object
-     sl_HitboxB=moSlider'KFTurboTestMut.PTTabDisplay.HitboxB'
+     sl_HitboxB=moSlider'KFTurboTestMut.KFTTTabDisplay.HitboxB'
 
      Begin Object Class=moSlider Name=NumSegments
          MaxValue=30.000000
@@ -256,9 +256,9 @@ defaultproperties
          LabelColor=(B=255,G=255,R=255)
          OnCreateComponent=NumSegments.InternalOnCreateComponent
          TabOrder=8
-         OnChange=PTTabDisplay.InternalOnChange
+         OnChange=KFTTTabDisplay.InternalOnChange
      End Object
-     sl_NumSegments=moSlider'KFTurboTestMut.PTTabDisplay.NumSegments'
+     sl_NumSegments=moSlider'KFTurboTestMut.KFTTTabDisplay.NumSegments'
 
-     OnPreDraw=PTTabDisplay.InternalOnPreDraw
+     OnPreDraw=KFTTTabDisplay.InternalOnPreDraw
 }

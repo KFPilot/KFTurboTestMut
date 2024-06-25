@@ -1,4 +1,4 @@
-class PTSteamStatsAndAchievements extends ROEngine.KFSteamStatsAndAchievements;
+class KFTTSteamStatsAndAchievements extends ROEngine.KFSteamStatsAndAchievements;
 
 event Timer();
 event OnPerkAvailable();

@@ -1,4 +1,4 @@
-class PTGameRules extends GameRules;
+class KFTTGameRules extends GameRules;
 
 const TIME_HitInterval = 0.06;
 

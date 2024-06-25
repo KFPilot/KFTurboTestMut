@@ -9,7 +9,7 @@ const STR_TeleTag = "SkellsTele";
 var KFTurboTestMut Mut;
 var KFMonster LastDamagedZed;
 var array<Teleporter> Destinations;
-var array<PTHeadHitbox> HeadHitboxes;
+var array<KFTTHeadHitbox> HeadHitboxes;
 var array<string> KeptWeapons, DamageMessages;
 var int hitCount, lastDamage, dmgMsgCount, spotIndex, headCount;
 var float lastTriggerMsg, lastTeleport, lastSpawnProj, damageLifeTime;
@@ -69,7 +69,7 @@ event ClientMessage(coerce string S, optional Name Type) {
 }
 
 function SetPawnClass(string inClass, string inCharacter) {
-	inCharacter = class'KFGameType'.static.GetValidCharacter(inCharacter);
+	inCharacter = class'KFProGameType'.static.GetValidCharacter(inCharacter);
 	PawnSetupRecord = class'xUtil'.static.FindPlayerRecord(inCharacter);
 	PlayerReplicationInfo.SetCharacterName(inCharacter);
 }
@@ -154,11 +154,11 @@ function SetDmgMsgCol(Color newColor) {
 
 /* HEAD HITBOXES */
 
-function AddHitbox(PTHeadHitbox Hitbox) {
+function AddHitbox(KFTTHeadHitbox Hitbox) {
 	HeadHitboxes[HeadHitboxes.length] = Hitbox;
 }
 
-function RemoveHitbox(PTHeadHitbox Hitbox) {
+function RemoveHitbox(KFTTHeadHitbox Hitbox) {
 	local byte i;
 	
 	for (i = 0; i < HeadHitboxes.length; i++) {
@@ -453,7 +453,7 @@ exec function ViewZeds() {
 		ClientSetViewTarget(First);
 		bBehindView = true;
 		ClientSetBehindView(true);
-		ClientMessage(ViewingFrom @ PTGameType(Level.Game).GetNameOf(KFMonsterController(First).Pawn));
+		ClientMessage(ViewingFrom @ KFTTGameType(Level.Game).GetNameOf(KFMonsterController(First).Pawn));
 	}
 	else {
 		ClientMessage("No zeds found");
@@ -480,7 +480,7 @@ exec function ForceRadial() {
 	Mut.ForceRadial(Self);
 }
 
-function PTProjBase SpawnProj(class<PTProjBase> ProjClass) {
+function KFTTProjBase SpawnProj(class<KFTTProjBase> ProjClass) {
 	if (Pawn != None && Pawn.Weapon != None && Level.timeSeconds - lastSpawnProj > 0.1) {
 		lastSpawnProj = Level.timeSeconds;
 		
@@ -496,7 +496,7 @@ function PTProjBase SpawnProj(class<PTProjBase> ProjClass) {
 }
 
 exec function Poof() {
-	SpawnProj(class'KFTurboTestMut.PTProjPoof');
+	SpawnProj(class'KFTurboTestMut.KFTTProjPoof');
 }
 
 /* STATES */
@@ -641,7 +641,7 @@ defaultproperties
      SelectedVeterancy=Class'KFMod.KFVetSharpshooter'
      bWantsTraderPath=False
      bChangedVeterancyThisWave=True
-     MidGameMenuClass="KFTurboTestMut.PTLoginMenu"
-     SteamStatsAndAchievementsClass=Class'KFTurboTestMut.PTSteamStatsAndAchievements'
-     PawnClass=Class'KFTurboTestMut.PTHumanPawn'
+     MidGameMenuClass="KFTurboTestMut.KFTTLoginMenu"
+     SteamStatsAndAchievementsClass=Class'KFTurboTestMut.KFTTSteamStatsAndAchievements'
+     PawnClass=Class'KFTurboTestMut.KFTTHumanPawn'
 }

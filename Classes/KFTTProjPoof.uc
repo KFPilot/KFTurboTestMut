@@ -1,4 +1,4 @@
-class PTProjPoof extends PTProjBase;
+class KFTTProjPoof extends KFTTProjBase;
 
 simulated function ProcessTouch(Actor Other, Vector HitLocation) {
 	local Pawn HitPawn;

@@ -1,4 +1,4 @@
-class PTHeadHitbox extends Actor;
+class KFTTHeadHitbox extends Actor;
 
 var KFTurboTestMut Mut;
 var KFTTPlayerController LP;

@@ -1,4 +1,4 @@
-class PTTabDamage extends PTBlankPanel;
+class KFTTTabDamage extends KFTTBlankPanel;
 
 var KFTTPlayerController PC;
 var automated GUISectionBackground sb_Damage;
@@ -75,7 +75,7 @@ defaultproperties
          Caption="Damage"
          OnPreDraw=sbDamage.InternalPreDraw
      End Object
-     sb_Damage=AltSectionBackground'KFTurboTestMut.PTTabDamage.sbDamage'
+     sb_Damage=AltSectionBackground'KFTurboTestMut.KFTTTabDamage.sbDamage'
 
      Begin Object Class=GUIScrollTextBox Name=lbDamage
          bNoTeletype=True
@@ -86,15 +86,15 @@ defaultproperties
          FontScale=FNS_Small
          bNeverFocus=True
      End Object
-     lb_Damage=GUIScrollTextBox'KFTurboTestMut.PTTabDamage.lbDamage'
+     lb_Damage=GUIScrollTextBox'KFTurboTestMut.KFTTTabDamage.lbDamage'
 
      Begin Object Class=GUIButton Name=bClear
          Caption="Clear"
          TabOrder=0
-         OnClick=PTTabDamage.ButtonClicked
+         OnClick=KFTTTabDamage.ButtonClicked
          OnKeyEvent=bClear.InternalOnKeyEvent
      End Object
-     b_Clear=GUIButton'KFTurboTestMut.PTTabDamage.bClear'
+     b_Clear=GUIButton'KFTurboTestMut.KFTTTabDamage.bClear'
 
-     OnPreDraw=PTTabDamage.InternalOnPreDraw
+     OnPreDraw=KFTTTabDamage.InternalOnPreDraw
 }

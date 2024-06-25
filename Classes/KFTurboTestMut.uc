@@ -3,7 +3,7 @@ class KFTurboTestMut extends Mutator;
 var const byte MAX_HeadHitboxes;
 var const float TIME_ClearDelay;
 
-var array<PTHeadHitbox> HeadHitboxes;
+var array<KFTTHeadHitbox> HeadHitboxes;
 var int numPlayers, hitboxCount;
 var float gameSpeed, timeClearedZeds, timeClearedLevel;
 var bool bWaitClearZeds, bWaitClearLevel, bDrawHitboxes;
@@ -55,17 +55,17 @@ function float HealthModifer(float hpScale) {
 }
 
 function PostBeginPlay() {
-	local PTGameType GT;
-	local PTGameRules GR;
+	local KFTTGameType GT;
+	local KFTTGameRules GR;
 		
 	Super.PostBeginPlay();
 		
-	GT = PTGameType(Level.Game);
+	GT = KFTTGameType(Level.Game);
 	if (GT == None) {
-		Level.ServerTravel("?game=KFTurboTestMut.PTGameType", true);
+		Level.ServerTravel("?game=KFTurboTestMut.KFTTGameType", true);
 	}
 	else {
-		GR = Spawn(class'PTGameRules');
+		GR = Spawn(class'KFTTGameRules');
 		GR.Mut = Self;
 		if (GT.GameRulesModifiers == None) {
 			GT.GameRulesModifiers = GR;
@@ -74,7 +74,7 @@ function PostBeginPlay() {
 			GT.GameRulesModifiers.AddGameRules(GR);
 		}
 		
-		GT.HUDType = string(class'PTHUD');
+		GT.HUDType = string(class'KFTTHUD');
 	
 		if (!ClassIsChildOf(GT.PlayerControllerClass, class'KFTTPlayerController')) {
 			GT.PlayerControllerClass = class'KFTTPlayerController';
@@ -88,7 +88,7 @@ function bool ReplaceActorClass(out class<Actor> MC) {
     local string MCName, LeftPart, RigthPart;
     local byte i, l;
        
-    if (class'KFGameType'.default.MonsterCollection == None) {
+    if (class'KFProGameType'.default.MonsterCollection == None) {
             return false;
     }
        
@@ -173,9 +173,9 @@ function ModifyPlayer(Pawn Other) {
 }
 
 function NotifyLogout(Controller Exiting) {
-	local PTGameType GT;
+	local KFTTGameType GT;
 	
-	GT = PTGameType(Level.Game);
+	GT = KFTTGameType(Level.Game);
 	if (GT != None && GT.numPlayers == 0 && GT.numSpectators == 0) {
 		ClearZeds();
 		ClearLevel();
@@ -189,7 +189,7 @@ simulated function Tick(float DeltaTime) {
 	
 	PC = Level.GetLocalPlayerController();
 	if (PC != None) {
-		PC.Player.InteractionMaster.AddInteraction("KFTurboTestMut.PTInteraction", PC.Player);
+		PC.Player.InteractionMaster.AddInteraction("KFTurboTestMut.KFTTInteraction", PC.Player);
 		Disable('Tick');
 	}
 }
@@ -211,9 +211,9 @@ function Timer() {
 /* HITBOXES */
 
 function AddHitbox(KFMonster Zed) {
-	local PTHeadHitbox NewHitbox;
+	local KFTTHeadHitbox NewHitbox;
 	
-	NewHitbox = Spawn(class'KFTurboTestMut.PTHeadHitbox', Zed);
+	NewHitbox = Spawn(class'KFTurboTestMut.KFTTHeadHitbox', Zed);
 	if (NewHitbox != None) {
 		NewHitbox.Mut = Self;
 		HeadHitboxes[HeadHitboxes.length] = NewHitbox;
@@ -221,7 +221,7 @@ function AddHitbox(KFMonster Zed) {
 	}
 }
 
-function RemoveHitbox(PTHeadHitbox Hitbox) {
+function RemoveHitbox(KFTTHeadHitbox Hitbox) {
 	local byte i;
 	
 	for (i = HeadHitboxes.Length - 1; i >= 0; i--) {
@@ -423,7 +423,7 @@ defaultproperties
      GameSpeed=1.000000
      bAddToServerPackages=True
      GroupName="KFPerkTest"
-     FriendlyName="PerkTest"
+     FriendlyName="Turbo Perk Test"
      Description="Adds features to help players practice."
      bAlwaysRelevant=True
      RemoteRole=ROLE_SimulatedProxy

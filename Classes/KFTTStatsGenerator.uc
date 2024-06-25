@@ -1,4 +1,4 @@
-class PTStatsGenerator extends Object
+class KFTTStatsGenerator extends Object
 	abstract;
 
 const STR_NA = "N/A";

@@ -1,4 +1,4 @@
-class PTTabWeapon extends PTBlankPanel;
+class KFTTTabWeapon extends KFTTBlankPanel;
 
 const STR_Separator = "------------------------------------------------";
 const STR_SeparatorShort = "|------------------------|";
@@ -37,7 +37,7 @@ function ShowPanel(bool bShow) {
 function InitStats() {
 	local KFPlayerReplicationInfo PRI;
 	local KFWeapon W;
-	local class<PTStatsGenerator> SG;
+	local class<KFTTStatsGenerator> SG;
 	local string SC, TC;
 
 	PRI = KFPlayerReplicationInfo(PlayerOwner().PlayerReplicationInfo);
@@ -47,7 +47,7 @@ function InitStats() {
 		W = None;
 
 	if (W != None && Welder(W) == None && Syringe(W) == None) {
-		SG = class'PTStatsGenerator';
+		SG = class'KFTTStatsGenerator';
 		SC = MakeColorCode(StatColour);
 		TC = MakeColorCode(TextColour);
 		
@@ -172,7 +172,7 @@ defaultproperties
          Caption="Weapon Stats"
          OnPreDraw=sbStats.InternalPreDraw
      End Object
-     sb_Stats=AltSectionBackground'KFTurboTestMut.PTTabWeapon.sbStats'
+     sb_Stats=AltSectionBackground'KFTurboTestMut.KFTTTabWeapon.sbStats'
 
      Begin Object Class=GUIScrollTextBox Name=lbStats
          bNoTeletype=True
@@ -182,9 +182,9 @@ defaultproperties
          FontScale=FNS_Small
          bNeverFocus=True
      End Object
-     lb_Stats=GUIScrollTextBox'KFTurboTestMut.PTTabWeapon.lbStats'
+     lb_Stats=GUIScrollTextBox'KFTurboTestMut.KFTTTabWeapon.lbStats'
 
      StatColour=(B=120,G=120,R=120)
      TextColour=(B=255,G=255,R=255)
-     OnPreDraw=PTTabWeapon.InternalOnPreDraw
+     OnPreDraw=KFTTTabWeapon.InternalOnPreDraw
 }

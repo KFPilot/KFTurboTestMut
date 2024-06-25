@@ -1,6 +1,6 @@
-class PTProjBaiBai extends PTProjBase;
+class KFTTProjBaiBai extends PTProjBase;
      
-var() PTHumanPawn HitPawn;
+var() KFTTHumanPawn HitPawn;
 
 simulated function ProcessTouch(Actor Other, Vector HitLocation)
 {
@@ -17,9 +17,9 @@ simulated function ProcessTouch(Actor Other, Vector HitLocation)
 	if (Role == ROLE_Authority)
 	{
 		if(ExtendedZCollision(Other) != None || KFBulletWhipAttachment(Other) != None)
-			HitPawn = PTHumanPawn(Other.Base);
+			HitPawn = KFTTHumanPawn(Other.Base);
 		else
-			HitPawn = PTHumanPawn(Other);
+			HitPawn = KFTTHumanPawn(Other);
 	}
 	if (HitPawn == None || HitPawn.Controller == None)
 		log("Hello, yes, this is projectile. We've missed.");

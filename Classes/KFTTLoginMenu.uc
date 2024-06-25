@@ -1,4 +1,4 @@
-class PTLoginMenu extends KFGui.KFInvasionLoginMenu;
+class KFTTLoginMenu extends KFGui.KFInvasionLoginMenu;
 
 function InitComponent(GUIController MyController, GUIComponent MyComponent) {
 	Super(FloatingWindow).InitComponent(MyController, MyComponent);
@@ -32,12 +32,12 @@ function AddPanels() {
 
 defaultproperties
 {
-     Panels(1)=(ClassName="KFTurboTestMut.PTTabMain",Caption="Commands",Hint="Main mutator interface")
-     Panels(2)=(ClassName="KFTurboTestMut.PTTabDamage",Caption="Damage",Hint="Damage dealt to zeds")
-     Panels(3)=(ClassName="KFTurboTestMut.PTTabDisplay",Caption="Display",Hint="Customize appearance of damage messages and head hitboxes")
-     Panels(4)=(ClassName="KFTurboTestMut.PTTabWeapon",Caption="Weapon",Hint="Your current weapon stats adjusted for your current perk bonuses")
+     Panels(1)=(ClassName="KFTurboTestMut.KFTTTabMain",Caption="Commands",Hint="Main mutator interface")
+     Panels(2)=(ClassName="KFTurboTestMut.KFTTTabDamage",Caption="Damage",Hint="Damage dealt to zeds")
+     Panels(3)=(ClassName="KFTurboTestMut.KFTTTabDisplay",Caption="Display",Hint="Customize appearance of damage messages and head hitboxes")
+     Panels(4)=(ClassName="KFTurboTestMut.KFTTTabWeapon",Caption="Weapon",Hint="Your current weapon stats adjusted for your current perk bonuses")
      Panels(5)=(ClassName="KFGui.KFTab_MidGameVoiceChat",Caption="Communication",Hint="Manage communication with other players")
-     Panels(6)=(ClassName="KFTurboTestMut.PTTabHelp",Caption="Help",Hint="List of all available commands")
+     Panels(6)=(ClassName="KFTurboTestMut.KFTTabHelp",Caption="Help",Hint="List of all available commands")
      Begin Object Class=GUITabControl Name=LoginMenuTC
          bDockPanels=True
          BackgroundStyleName="TabBackground"
@@ -49,6 +49,6 @@ defaultproperties
          bAcceptsInput=True
          OnActivate=LoginMenuTC.InternalOnActivate
      End Object
-     c_Main=GUITabControl'KFTurboTestMut.PTLoginMenu.LoginMenuTC'
+     c_Main=GUITabControl'KFTurboTestMut.KFTTLoginMenu.LoginMenuTC'
 
 }

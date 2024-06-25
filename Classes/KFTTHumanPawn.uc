@@ -1,4 +1,4 @@
-class PTHumanPawn extends KFMod.KFHumanPawn;
+class KFTTHumanPawn extends KFPHumanPawn;
 
 function bool CanBuyNow() {
 	return true;

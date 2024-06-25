@@ -1,4 +1,4 @@
-class PTProjBase extends KFMod.ShotgunBullet;
+class KFTTProjBase extends KFMod.ShotgunBullet;
 
 simulated function ProcessTouch (Actor Other, Vector HitLocation) {
 	local Vector X, TempHitLocation, HitNormal;

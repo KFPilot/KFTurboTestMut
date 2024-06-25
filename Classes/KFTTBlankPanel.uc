@@ -1,4 +1,4 @@
-class PTBlankPanel extends GUI2K4.MidGamePanel;
+class KFTTBlankPanel extends GUI2K4.MidGamePanel;
 
 var automated array<GUIButton> b_KFButtons;
 var noexport bool bNetGame;
@@ -272,73 +272,73 @@ defaultproperties
 		WinWidth=0.147268
 		WinHeight=0.048769
 		TabOrder=30
-		OnClick=PTBlankPanel.ButtonClicked
+		OnClick=KFTTBlankPanel.ButtonClicked
 		OnKeyEvent=SettingsButton.InternalOnKeyEvent
 	End Object
-	b_KFButtons(0)=GUIButton'PTBlankPanel.SettingsButton'
+	b_KFButtons(0)=GUIButton'KFTTBlankPanel.SettingsButton'
 
 	Begin Object Class=GUIButton Name=BrowserButton
 		Caption="Server Browser"
 		bAutoSize=true
 		TabOrder=31
-		OnClick=PTBlankPanel.ButtonClicked
+		OnClick=KFTTBlankPanel.ButtonClicked
 		OnKeyEvent=BrowserButton.InternalOnKeyEvent
 	End Object
-	b_KFButtons(1)=GUIButton'PTBlankPanel.BrowserButton'
+	b_KFButtons(1)=GUIButton'KFTTBlankPanel.BrowserButton'
 
 	Begin Object Class=GUIButton Name=FavoritesButton
 		Caption="Add to Favs"
 		bAutoSize=true
 		Hint="Add this server to your Favorites"
 		TabOrder=32
-		OnClick=PTBlankPanel.ButtonClicked
+		OnClick=KFTTBlankPanel.ButtonClicked
 		OnKeyEvent=FavoritesButton.InternalOnKeyEvent
 	End Object
-	b_KFButtons(2)=GUIButton'PTBlankPanel.FavoritesButton'
+	b_KFButtons(2)=GUIButton'KFTTBlankPanel.FavoritesButton'
 	
 	Begin Object Class=GUIButton Name=MapVotingButton
 		Caption="Map Voting"
 		bAutoSize=true
 		TabOrder=33
-		OnClick=PTBlankPanel.ButtonClicked
+		OnClick=KFTTBlankPanel.ButtonClicked
 		OnKeyEvent=MapVotingButton.InternalOnKeyEvent
 	End Object
-	b_KFButtons(3)=GUIButton'PTBlankPanel.MapVotingButton'
+	b_KFButtons(3)=GUIButton'KFTTBlankPanel.MapVotingButton'
 
 	Begin Object Class=GUIButton Name=KickVotingButton
 		Caption="Kick Voting"
 		bAutoSize=true
 		TabOrder=34
-		OnClick=PTBlankPanel.ButtonClicked
+		OnClick=KFTTBlankPanel.ButtonClicked
 		OnKeyEvent=KickVotingButton.InternalOnKeyEvent
 	End Object
-	b_KFButtons(4)=GUIButton'PTBlankPanel.KickVotingButton'
+	b_KFButtons(4)=GUIButton'KFTTBlankPanel.KickVotingButton'
 
 	Begin Object Class=GUIButton Name=SpectateButton
 		Caption="Spectate"
 		bAutoSize=true
 		TabOrder=35
-		OnClick=PTBlankPanel.ButtonClicked
+		OnClick=KFTTBlankPanel.ButtonClicked
 		OnKeyEvent=SpectateButton.InternalOnKeyEvent
 	End Object
-	b_KFButtons(5)=GUIButton'PTBlankPanel.SpectateButton'
+	b_KFButtons(5)=GUIButton'KFTTBlankPanel.SpectateButton'
 	
 	Begin Object Class=GUIButton Name=LeaveMatchButton
 		bAutoSize=true
 		TabOrder=36
-		OnClick=PTBlankPanel.ButtonClicked
+		OnClick=KFTTBlankPanel.ButtonClicked
 		OnKeyEvent=LeaveMatchButton.InternalOnKeyEvent
 	End Object
-	b_KFButtons(6)=GUIButton'PTBlankPanel.LeaveMatchButton'
+	b_KFButtons(6)=GUIButton'KFTTBlankPanel.LeaveMatchButton'
 	
 	Begin Object Class=GUIButton Name=QuitGameButton
 		Caption="Exit Game"
 		bAutoSize=true
 		TabOrder=37
-		OnClick=PTBlankPanel.ButtonClicked
+		OnClick=KFTTBlankPanel.ButtonClicked
 		OnKeyEvent=QuitGameButton.InternalOnKeyEvent
 	End Object
-	b_KFButtons(7)=GUIButton'PTBlankPanel.QuitGameButton'
+	b_KFButtons(7)=GUIButton'KFTTBlankPanel.QuitGameButton'
 	
 	LeaveMPButtonText="Disconnect"
 	LeaveSPButtonText="Forfeit"
@@ -352,5 +352,5 @@ defaultproperties
 	WinLeft=0.250000
 	WinWidth=0.500000
 	WinHeight=0.750000
-	OnPreDraw=PTBlankPanel.InternalOnPreDraw
+	OnPreDraw=KFTTBlankPanel.InternalOnPreDraw
 }

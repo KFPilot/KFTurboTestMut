@@ -1,4 +1,4 @@
-class PTGameType extends KFMod.KFGameType;
+class KFTTGameType extends KFProGameType;
 
 function DramaticEvent(float BaseZedTimePossibility, optional float DesiredZedTimeDuration);
 function DoBossDeath();
@@ -106,5 +106,10 @@ State MatchInProgress {
 
 defaultproperties
 {
-     LoginMenuClass="KFTurboTestMut.PTLoginMenu"
+	GameName="Killing Floor Turbo Test Mode"
+	Description="Test mode of the Killing Floor Turbo mod."
+	LoginMenuClass="KFTurboTestMut.KFTTLoginMenu"
+	MapPrefix="KFP"
+	BeaconName="KFP"
+	Acronym="KFP"
 }

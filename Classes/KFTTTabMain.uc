@@ -1,4 +1,4 @@
-class PTTabMain extends PTBlankPanel
+class KFTTTabMain extends KFTTBlankPanel
 	config(User);
 
 var KFTTPlayerController PC;
@@ -248,145 +248,145 @@ defaultproperties
          Caption="Change perk"
          OnPreDraw=BGTopLeft.InternalPreDraw
      End Object
-     sb_TopLeft=GUISectionBackground'KFTurboTestMut.PTTabMain.BGTopLeft'
+     sb_TopLeft=GUISectionBackground'KFTurboTestMut.KFTTTabMain.BGTopLeft'
 
      Begin Object Class=GUISectionBackground Name=BGMidLeft
          bFillClient=True
          Caption="Health config"
          OnPreDraw=BGMidLeft.InternalPreDraw
      End Object
-     sb_MidLeft=GUISectionBackground'KFTurboTestMut.PTTabMain.BGMidLeft'
+     sb_MidLeft=GUISectionBackground'KFTurboTestMut.KFTTTabMain.BGMidLeft'
 
      Begin Object Class=GUISectionBackground Name=BGBottomLeft
          bFillClient=True
          Caption="Game speed"
          OnPreDraw=BGBottomLeft.InternalPreDraw
      End Object
-     sb_BottomLeft=GUISectionBackground'KFTurboTestMut.PTTabMain.BGBottomLeft'
+     sb_BottomLeft=GUISectionBackground'KFTurboTestMut.KFTTTabMain.BGBottomLeft'
 
      Begin Object Class=GUISectionBackground Name=BGTopRight
          bFillClient=True
          Caption="Misc. options"
          OnPreDraw=BGTopRight.InternalPreDraw
      End Object
-     sb_TopRight=GUISectionBackground'KFTurboTestMut.PTTabMain.BGTopRight'
+     sb_TopRight=GUISectionBackground'KFTurboTestMut.KFTTTabMain.BGTopRight'
 
      Begin Object Class=GUISectionBackground Name=BGBottomRight
          Caption="Misc. commands"
          OnPreDraw=BGBottomRight.InternalPreDraw
      End Object
-     sb_BottomRight=GUISectionBackground'KFTurboTestMut.PTTabMain.BGBottomRight'
+     sb_BottomRight=GUISectionBackground'KFTurboTestMut.KFTTTabMain.BGBottomRight'
 
      Begin Object Class=GUILabel Name=PerkLabel
          TabOrder=2
      End Object
-     l_PerkLabel=GUILabel'KFTurboTestMut.PTTabMain.PerkLabel'
+     l_PerkLabel=GUILabel'KFTurboTestMut.KFTTTabMain.PerkLabel'
 
      Begin Object Class=GUILabel Name=HealthLabel
          TabOrder=5
      End Object
-     l_HealthLabel=GUILabel'KFTurboTestMut.PTTabMain.HealthLabel'
+     l_HealthLabel=GUILabel'KFTurboTestMut.KFTTTabMain.HealthLabel'
 
      Begin Object Class=GUILabel Name=SpeedLabel
          TabOrder=8
      End Object
-     l_SpeedLabel=GUILabel'KFTurboTestMut.PTTabMain.SpeedLabel'
+     l_SpeedLabel=GUILabel'KFTurboTestMut.KFTTTabMain.SpeedLabel'
 
      Begin Object Class=GUIButton Name=SetPerkButton
          Caption="Apply"
          TabOrder=3
-         OnClick=PTTabMain.ButtonClicked
+         OnClick=KFTTTabMain.ButtonClicked
          OnKeyEvent=SetPerkButton.InternalOnKeyEvent
      End Object
-     b_SetPerk=GUIButton'KFTurboTestMut.PTTabMain.SetPerkButton'
+     b_SetPerk=GUIButton'KFTurboTestMut.KFTTTabMain.SetPerkButton'
 
      Begin Object Class=GUIButton Name=SetHealth
          Caption="Apply"
          TabOrder=6
-         OnClick=PTTabMain.ButtonClicked
+         OnClick=KFTTTabMain.ButtonClicked
          OnKeyEvent=SetHealth.InternalOnKeyEvent
      End Object
-     b_SetHealth=GUIButton'KFTurboTestMut.PTTabMain.SetHealth'
+     b_SetHealth=GUIButton'KFTurboTestMut.KFTTTabMain.SetHealth'
 
      Begin Object Class=GUIButton Name=SetSpeed
          Caption="Apply"
          TabOrder=9
-         OnClick=PTTabMain.ButtonClicked
+         OnClick=KFTTTabMain.ButtonClicked
          OnKeyEvent=SetSpeed.InternalOnKeyEvent
      End Object
-     b_SetSpeed=GUIButton'KFTurboTestMut.PTTabMain.SetSpeed'
+     b_SetSpeed=GUIButton'KFTurboTestMut.KFTTTabMain.SetSpeed'
 
      Begin Object Class=GUIButton Name=ClearLevelButton
          Caption="Clear Level"
          Hint="Remove all weapon pickups and projectiles and reset all doors."
          TabOrder=13
-         OnClick=PTTabMain.ButtonClicked
+         OnClick=KFTTTabMain.ButtonClicked
          OnKeyEvent=ClearLevelButton.InternalOnKeyEvent
      End Object
-     b_ClearLevel=GUIButton'KFTurboTestMut.PTTabMain.ClearLevelButton'
+     b_ClearLevel=GUIButton'KFTurboTestMut.KFTTTabMain.ClearLevelButton'
 
      Begin Object Class=GUIButton Name=ClearZedsButton
          Caption="Clear Zeds"
          Hint="Remove all zeds."
          TabOrder=14
-         OnClick=PTTabMain.ButtonClicked
+         OnClick=KFTTTabMain.ButtonClicked
          OnKeyEvent=ClearZedsButton.InternalOnKeyEvent
      End Object
-     b_ClearZeds=GUIButton'KFTurboTestMut.PTTabMain.ClearZedsButton'
+     b_ClearZeds=GUIButton'KFTurboTestMut.KFTTTabMain.ClearZedsButton'
 
      Begin Object Class=GUIButton Name=TeleportButton
          Caption="Teleport"
          Hint="Teleport between set locations on the map."
          TabOrder=15
-         OnClick=PTTabMain.ButtonClicked
+         OnClick=KFTTTabMain.ButtonClicked
          OnKeyEvent=TeleportButton.InternalOnKeyEvent
      End Object
-     b_Teleport=GUIButton'KFTurboTestMut.PTTabMain.TeleportButton'
+     b_Teleport=GUIButton'KFTurboTestMut.KFTTTabMain.TeleportButton'
 
      Begin Object Class=GUIButton Name=TradeButton
          Caption="Trade"
          Hint="Open the trader menu."
          TabOrder=16
-         OnClick=PTTabMain.ButtonClicked
+         OnClick=KFTTTabMain.ButtonClicked
          OnKeyEvent=TradeButton.InternalOnKeyEvent
      End Object
-     b_Trade=GUIButton'KFTurboTestMut.PTTabMain.TradeButton'
+     b_Trade=GUIButton'KFTurboTestMut.KFTTTabMain.TradeButton'
 
      Begin Object Class=GUIButton Name=GodButton
          Caption="God Mode"
          Hint="Toggle god mode."
          TabOrder=17
-         OnClick=PTTabMain.ButtonClicked
+         OnClick=KFTTTabMain.ButtonClicked
          OnKeyEvent=GodButton.InternalOnKeyEvent
      End Object
-     b_God=GUIButton'KFTurboTestMut.PTTabMain.GodButton'
+     b_God=GUIButton'KFTurboTestMut.KFTTTabMain.GodButton'
 
      Begin Object Class=GUIButton Name=ViewZedsButton
          Caption="View Zeds"
          Hint="Spectate zeds."
          TabOrder=19
-         OnClick=PTTabMain.ButtonClicked
+         OnClick=KFTTTabMain.ButtonClicked
          OnKeyEvent=ViewZedsButton.InternalOnKeyEvent
      End Object
-     b_ViewZeds=GUIButton'KFTurboTestMut.PTTabMain.ViewZedsButton'
+     b_ViewZeds=GUIButton'KFTurboTestMut.KFTTTabMain.ViewZedsButton'
 
      Begin Object Class=GUIButton Name=ViewSelfButton
          Caption="View Self"
          Hint="Set camera to the player."
          TabOrder=20
-         OnClick=PTTabMain.ButtonClicked
+         OnClick=KFTTTabMain.ButtonClicked
          OnKeyEvent=ViewSelfButton.InternalOnKeyEvent
      End Object
-     b_ViewSelf=GUIButton'KFTurboTestMut.PTTabMain.ViewSelfButton'
+     b_ViewSelf=GUIButton'KFTurboTestMut.KFTTTabMain.ViewSelfButton'
 
      Begin Object Class=GUIButton Name=RadialButton
          Caption="Force Radial"
          Hint="Force Patriarch to do his radial attack."
          TabOrder=18
-         OnClick=PTTabMain.ButtonClicked
+         OnClick=KFTTTabMain.ButtonClicked
          OnKeyEvent=RadialButton.InternalOnKeyEvent
      End Object
-     b_Radial=GUIButton'KFTurboTestMut.PTTabMain.RadialButton'
+     b_Radial=GUIButton'KFTurboTestMut.KFTTTabMain.RadialButton'
 
      Begin Object Class=moNumericEdit Name=PerkLevel
          MinValue=0
@@ -395,9 +395,9 @@ defaultproperties
          OnCreateComponent=PerkLevel.InternalOnCreateComponent
          Hint="Select your level."
          TabOrder=0
-         OnChange=PTTabMain.InternalOnChange
+         OnChange=KFTTTabMain.InternalOnChange
      End Object
-     nu_PerkLevel=moNumericEdit'KFTurboTestMut.PTTabMain.PerkLevel'
+     nu_PerkLevel=moNumericEdit'KFTurboTestMut.KFTTTabMain.PerkLevel'
 
      Begin Object Class=moNumericEdit Name=NumPlayers
          MinValue=1
@@ -406,9 +406,9 @@ defaultproperties
          OnCreateComponent=NumPlayers.InternalOnCreateComponent
          Hint="Number of players to scale zeds' health."
          TabOrder=4
-         OnChange=PTTabMain.InternalOnChange
+         OnChange=KFTTTabMain.InternalOnChange
      End Object
-     nu_NumPlayers=moNumericEdit'KFTurboTestMut.PTTabMain.NumPlayers'
+     nu_NumPlayers=moNumericEdit'KFTurboTestMut.KFTTTabMain.NumPlayers'
 
      Begin Object Class=moComboBox Name=PerkName
          bReadOnly=True
@@ -416,9 +416,9 @@ defaultproperties
          OnCreateComponent=PerkName.InternalOnCreateComponent
          Hint="Select your perk."
          TabOrder=1
-         OnChange=PTTabMain.InternalOnChange
+         OnChange=KFTTTabMain.InternalOnChange
      End Object
-     co_PerkName=moComboBox'KFTurboTestMut.PTTabMain.PerkName'
+     co_PerkName=moComboBox'KFTurboTestMut.KFTTTabMain.PerkName'
 
      Begin Object Class=moFloatEdit Name=GameSpeed
          MinValue=0.100000
@@ -427,39 +427,39 @@ defaultproperties
          OnCreateComponent=GameSpeed.InternalOnCreateComponent
          Hint="Adjust the game speed."
          TabOrder=7
-         OnChange=PTTabMain.InternalOnChange
+         OnChange=KFTTTabMain.InternalOnChange
      End Object
-     fl_GameSpeed=moFloatEdit'KFTurboTestMut.PTTabMain.GameSpeed'
+     fl_GameSpeed=moFloatEdit'KFTurboTestMut.KFTTTabMain.GameSpeed'
 
      Begin Object Class=moCheckBox Name=KeepWeapons
          Caption="Keep weapons"
          OnCreateComponent=KeepWeapons.InternalOnCreateComponent
          Hint="Keep all weapons in the inventory upon death."
          TabOrder=10
-         OnChange=PTTabMain.InternalOnChange
-         OnLoadINI=PTTabMain.InternalOnLoadINI
+         OnChange=KFTTTabMain.InternalOnChange
+         OnLoadINI=KFTTTabMain.InternalOnLoadINI
      End Object
-     ch_KeepWeapons=moCheckBox'KFTurboTestMut.PTTabMain.KeepWeapons'
+     ch_KeepWeapons=moCheckBox'KFTurboTestMut.KFTTTabMain.KeepWeapons'
 
      Begin Object Class=moCheckBox Name=EnableCrosshairs
          Caption="Show crosshairs"
          OnCreateComponent=EnableCrosshairs.InternalOnCreateComponent
          Hint="Show crosshairs."
          TabOrder=11
-         OnChange=PTTabMain.InternalOnChange
-         OnLoadINI=PTTabMain.InternalOnLoadINI
+         OnChange=KFTTTabMain.InternalOnChange
+         OnLoadINI=KFTTTabMain.InternalOnLoadINI
      End Object
-     ch_EnableCrosshairs=moCheckBox'KFTurboTestMut.PTTabMain.EnableCrosshairs'
+     ch_EnableCrosshairs=moCheckBox'KFTurboTestMut.KFTTTabMain.EnableCrosshairs'
 
      Begin Object Class=moCheckBox Name=DrawHitboxes
          Caption="Draw head hitboxes"
          OnCreateComponent=DrawHitboxes.InternalOnCreateComponent
          Hint="Draw head hitboxes for zeds. Some zeds have larger hitboxes on dedicated servers, and they are also 25% larger for melee weapons."
          TabOrder=12
-         OnChange=PTTabMain.InternalOnChange
-         OnLoadINI=PTTabMain.InternalOnLoadINI
+         OnChange=KFTTTabMain.InternalOnChange
+         OnLoadINI=KFTTTabMain.InternalOnLoadINI
      End Object
-     ch_DrawHitboxes=moCheckBox'KFTurboTestMut.PTTabMain.DrawHitboxes'
+     ch_DrawHitboxes=moCheckBox'KFTurboTestMut.KFTTTabMain.DrawHitboxes'
 
-     OnPreDraw=PTTabMain.InternalOnPreDraw
+     OnPreDraw=KFTTTabMain.InternalOnPreDraw
 }

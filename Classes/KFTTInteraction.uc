@@ -1,4 +1,4 @@
-class PTInteraction extends Interaction;
+class KFTTInteraction extends Interaction;
 
 const XHAIR_LineLength = 16.0;
 const XHAIR_LineWidth = 2.0;
