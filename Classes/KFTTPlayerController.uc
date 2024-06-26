@@ -665,4 +665,5 @@ defaultproperties
 	MidGameMenuClass="KFTurboTestMut.KFTTLoginMenu"
 	SteamStatsAndAchievementsClass=Class'KFTurboTestMut.KFTTSteamStatsAndAchievements'
 	PawnClass=Class'KFTurboTestMut.KFTTHumanPawn'
+	LobbyMenuClassString="KFTurbo.KFPLobbyMenu"
 }
