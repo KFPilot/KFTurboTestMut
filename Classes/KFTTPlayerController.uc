@@ -43,7 +43,6 @@ simulated function CheckForHint(int hintType);
 
 event ClientOpenMenu(string Menu, optional bool bDisconnect,optional string Msg1, optional string Msg2)
 {
-	log(Menu);
 	Super.ClientOpenMenu(Menu, bDisconnect, Msg1, Msg2);	
 }
 
