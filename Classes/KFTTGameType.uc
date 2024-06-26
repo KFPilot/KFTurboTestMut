@@ -106,6 +106,8 @@ State MatchInProgress {
 
 defaultproperties
 {
+	bIsHighDifficulty=false
+
 	GameName="Killing Floor Turbo Test Mode"
 	Description="Test mode of the Killing Floor Turbo mod."
 	LoginMenuClass="KFTurboTestMut.KFTTLoginMenu"

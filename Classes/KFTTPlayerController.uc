@@ -651,13 +651,13 @@ state Spectating {
 
 defaultproperties
 {
-     NumSegments=10
-     DmgMsgCol=(B=255,G=255,R=255,A=255)
-     HitboxCol=(B=255,G=255,A=255)
-     SelectedVeterancy=Class'KFMod.KFVetSharpshooter'
-     bWantsTraderPath=False
-     bChangedVeterancyThisWave=True
-     MidGameMenuClass="KFTurboTestMut.KFTTLoginMenu"
-     SteamStatsAndAchievementsClass=Class'KFTurboTestMut.KFTTSteamStatsAndAchievements'
-     PawnClass=Class'KFTurboTestMut.KFTTHumanPawn'
+	NumSegments=10
+	DmgMsgCol=(B=255,G=255,R=255,A=255)
+	HitboxCol=(B=255,G=255,A=255)
+	SelectedVeterancy = class'KFTurbo.V_Sharpshooter';
+	bWantsTraderPath=False
+	bChangedVeterancyThisWave=True
+	MidGameMenuClass="KFTurboTestMut.KFTTLoginMenu"
+	SteamStatsAndAchievementsClass=Class'KFTurboTestMut.KFTTSteamStatsAndAchievements'
+	PawnClass=Class'KFTurboTestMut.KFTTHumanPawn'
 }
