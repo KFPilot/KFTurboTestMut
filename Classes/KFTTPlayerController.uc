@@ -43,6 +43,12 @@ simulated function CheckForHint(int hintType);
 
 event ClientOpenMenu(string Menu, optional bool bDisconnect,optional string Msg1, optional string Msg2)
 {
+	//Attempt fix weird issue where wrong login menu is present.
+	if (Menu ~= "ServerPerks.SRInvasionLoginMenu" || Menu ~= "KFGui.KFInvasionLoginMenu")
+	{
+		Menu = string(class'KFTurboTestMut.KFTTLoginMenu');
+	}
+
 	Super.ClientOpenMenu(Menu, bDisconnect, Msg1, Msg2);	
 }
 
@@ -50,7 +56,7 @@ simulated function ClientReceiveLoginMenu(string MenuClass, bool bForce)
 {
 	if (MenuClass ~= "KFTurbo.KFPInvasionLoginMenu" || MenuClass ~= "ServerPerks.SRInvasionLoginMenu" || MenuClass ~= "KFGui.KFInvasionLoginMenu")
 	{
-		MenuClass = "KFTurboTestMut.KFTTLoginMenu";
+		MenuClass = string(class'KFTurboTestMut.KFTTLoginMenu');
 	}
 
 	Super.ClientReceiveLoginMenu(MenuClass, bForce);
