@@ -5,7 +5,7 @@ var KFTTPlayerController PC;
 var automated GUISectionBackground sb_TopLeft, sb_MidLeft, sb_BottomLeft, sb_TopRight, sb_BottomRight;
 var automated GUILabel l_PerkLabel, l_HealthLabel, l_SpeedLabel;
 var automated GUIButton b_SetPerk, b_SetHealth, b_SetSpeed, b_ClearLevel, b_ClearZeds, b_Teleport, b_Trade, b_God, b_ViewZeds, b_ViewSelf, b_Radial;
-var automated moNumericEdit nu_PerkLevel, nu_NumPlayers;
+var automated moNumericEdit nu_NumPlayers;
 var automated moComboBox co_PerkName;
 var automated moFloatEdit fl_GameSpeed;
 var automated moCheckbox ch_KeepWeapons, ch_EnableCrosshairs, ch_DrawHitboxes;
@@ -29,7 +29,6 @@ function InitComponent(GUIController MyController, GUIComponent MyOwner) {
 	co_PerkName.AddItem("Firebug");
 	co_PerkName.AddItem("Demolitions");
 	
-	sb_TopLeft.ManageComponent(nu_PerkLevel);
 	sb_TopLeft.ManageComponent(co_PerkName);
 	sb_TopLeft.ManageComponent(l_PerkLabel);
 	
@@ -83,7 +82,6 @@ function InitValues() {
 	
 	PRI = KFPlayerReplicationInfo(PlayerOwner().PlayerReplicationInfo);
 	if (PRI != None) {
-		nu_PerkLevel.SetValue(PRI.ClientVeteranSkillLevel);
 		if (PRI.ClientVeteranSkill != None)
 			co_PerkName.SetIndex(PRI.ClientVeteranSkill.default.PerkIndex);
 	}
@@ -120,7 +118,7 @@ function string GetPerkString(int aIndex) {
 function bool ButtonClicked(GUIComponent Sender) {
 	switch (Sender) {
 		case b_SetPerk:
-			PC.SetPerk(GetPerkString(co_PerkName.GetIndex()), nu_PerkLevel.GetValue());
+			PC.SetPerk(GetPerkString(co_PerkName.GetIndex()));
 			break;
 		case b_SetHealth:
 			PC.SetHealth(nu_NumPlayers.GetValue());
@@ -227,7 +225,6 @@ function bool InternalOnPreDraw(Canvas C) {
 	
 	w = b_SetPerk.ActualWidth();
 	h = b_SetPerk.ActualHeight();
-	x = 2 * sb_TopLeft.ActualLeft() + sb_TopLeft.ActualWidth() - nu_PerkLevel.ActualLeft() - w;
 	b_SetPerk.SetPosition(x, l_PerkLabel.ActualTop(), w, h, true);
 	b_SetHealth.SetPosition(x, l_HealthLabel.ActualTop(), w, h, true);
 	b_SetSpeed.SetPosition(x, l_SpeedLabel.ActualTop(), w, h, true);
@@ -387,17 +384,6 @@ defaultproperties
          OnKeyEvent=RadialButton.InternalOnKeyEvent
      End Object
      b_Radial=GUIButton'KFTurboTestMut.KFTTTabMain.RadialButton'
-
-     Begin Object Class=moNumericEdit Name=PerkLevel
-         MinValue=0
-         MaxValue=6
-         Caption="Level"
-         OnCreateComponent=PerkLevel.InternalOnCreateComponent
-         Hint="Select your level."
-         TabOrder=0
-         OnChange=KFTTTabMain.InternalOnChange
-     End Object
-     nu_PerkLevel=moNumericEdit'KFTurboTestMut.KFTTTabMain.PerkLevel'
 
      Begin Object Class=moNumericEdit Name=NumPlayers
          MinValue=1

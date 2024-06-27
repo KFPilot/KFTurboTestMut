@@ -250,11 +250,23 @@ function SetDrawHitboxes(bool newDrawHitboxes) {
 function ServerSetPerk(class<KFVeterancyTypes> NewVet, byte newLevel) {
 	local KFPlayerReplicationInfo PRI;
 	local KFHumanPawn P;
+	local ClientPerkRepLink CPRL;
+	local int PerkIndex;
 		
+	CPRL = class'ClientPerkRepLink'.static.FindStats(self);
+
 	PRI = KFPlayerReplicationInfo(PlayerReplicationInfo);
 	if (PRI != None) {
 		PRI.ClientVeteranSkill = NewVet;
-		PRI.ClientVeteranSkillLevel = newLevel;
+		PRI.ClientVeteranSkillLevel = 0;
+		for (PerkIndex = 0; PerkIndex < CPRL.CachePerks.Length; PerkIndex++)
+		{
+			if (CPRL.CachePerks[PerkIndex].PerkClass == NewVet)
+			{
+				PRI.ClientVeteranSkillLevel = CPRL.CachePerks[PerkIndex].CurrentLevel;
+				break;
+			}
+		}
 	}
 	
 	P = KFHumanPawn(Pawn);

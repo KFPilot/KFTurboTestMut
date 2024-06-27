@@ -1,4 +1,4 @@
-class KFTTLoginMenu extends KFTurbo.KFPInvasionLoginMenu;
+class KFTTLoginMenu extends KFGui.KFInvasionLoginMenu;
 
 function InitComponent(GUIController MyController, GUIComponent MyComponent) {
 	Super(FloatingWindow).InitComponent(MyController, MyComponent);
